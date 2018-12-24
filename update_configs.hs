@@ -12,7 +12,9 @@ filesToPaths =  [(".kakrc", "~/.config/kak/"),
                  ("init.vim", "~/.config/nvim/"),
                  ("alacritty.yml", ".config/alacritty/"),
                  (".inputrc", "~/"),
-                 (".tmux.conf", "~/")]
+                 (".tmux.conf", "~/"),
+                 ("kakrc", "~/.config/kak"),
+                 ("startup.kak" "~/.config/kak/autoload/")]
 
 filesToPaths' :: [(Text, Text)]
 filesToPaths' =  [(".something", "~/")]
@@ -20,6 +22,4 @@ filesToPaths' =  [(".something", "~/")]
 mvToDir :: Text -> Text -> IO ExitCode
 mvToDir file path = shell (Text.concat ["mv -f ", file, " ", path]) empty
 
-main = mapM_ (\(a, b) -> do { mvToDir a b
-                            })
-             filesToPaths'
+main = mapM_ (\(a, b) -> mvToDir a b}) filesToPaths'
