@@ -10,11 +10,11 @@ import qualified Data.Text as Text
 filesToPaths :: [(Text, Text)]
 filesToPaths =  [("kakrc", "~/.config/kak/"),
                  ("init.vim", "~/.config/nvim/"),
-                 ("alacritty.yml", ".config/alacritty/"),
+                 ("alacritty.yml", "~/.config/alacritty/"),
                  (".inputrc", "~/"),
                  (".tmux.conf", "~/"),
                  ("kakrc", "~/.config/kak"),
-                 ("startup.kak" "~/.config/kak/autoload/")]
+                 ("startup.kak", "~/.config/kak/autoload/")]
 
 cpToDir :: Text -> Text -> IO ExitCode
 cpToDir file path = shell (Text.concat ["cp -f ", file, " ", path]) empty
