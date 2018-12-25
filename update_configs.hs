@@ -8,7 +8,7 @@ import Data.Foldable
 import qualified Data.Text as Text
 
 filesToPaths :: [(Text, Text)]
-filesToPaths =  [(".kakrc", "~/.config/kak/"),
+filesToPaths =  [("kakrc", "~/.config/kak/"),
                  ("init.vim", "~/.config/nvim/"),
                  ("alacritty.yml", ".config/alacritty/"),
                  (".inputrc", "~/"),
@@ -16,10 +16,7 @@ filesToPaths =  [(".kakrc", "~/.config/kak/"),
                  ("kakrc", "~/.config/kak"),
                  ("startup.kak" "~/.config/kak/autoload/")]
 
-filesToPaths' :: [(Text, Text)]
-filesToPaths' =  [(".something", "~/")]
+cpToDir :: Text -> Text -> IO ExitCode
+cpToDir file path = shell (Text.concat ["cp -f ", file, " ", path]) empty
 
-mvToDir :: Text -> Text -> IO ExitCode
-mvToDir file path = shell (Text.concat ["mv -f ", file, " ", path]) empty
-
-main = mapM_ (\(a, b) -> mvToDir a b}) filesToPaths'
+main = mapM_ (\(a, b) -> cpToDir a b) filesToPaths
