@@ -10,6 +10,8 @@ plug "andreyorst/powerline.kak" %{
     }
 }
 plug "lenormf/kakoune-extra"
+plug "alexherbo2/select.kak"
+plug "alexherbo2/portal.kak"
 
 hook global InsertChar j %{ try %{
       exec -draft hH <a-k>jj<ret> d
