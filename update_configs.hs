@@ -11,6 +11,7 @@ filesToPaths :: [(Text, Text)]
 filesToPaths =  [("kakrc", "~/.config/kak/"),
                  ("init.vim", "~/.config/nvim/"),
                  ("alacritty.yml", "~/.config/alacritty/"),
+                 ("config.fish", "~/.config/fish/"),
                  (".inputrc", "~/"),
                  (".tmux.conf", "~/"),
                  ("kakrc", "~/.config/kak"),
