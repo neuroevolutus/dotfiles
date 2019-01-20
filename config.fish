@@ -1,4 +1,19 @@
 fish_vi_key_bindings
+
+# https://superuser.com/questions/863538/tmux-execute-command-in-session-on-startup
+# Trimming whitespace: https://unix.stackexchange.com/questions/102008/how-do-i-trim-leading-and-trailing-whitespace-from-each-line-of-some-output
+if test -n (printf "$TMUX" | sed 's/^[ \t]*//;s/[ \t]*$//')
+   and test (tmux list-sessions | wc -l | sed 's/^[ \t]*//;s/[ \t]*$//') -gt 1;
+   tmux list-sessions | awk '{print $1}' | grep 0 | wc -l | sed 's/^[ \t]*//;s/[ \t]*$//' | read -l num;
+   # https://stackoverflow.com/questions/1786888/in-bash-shell-script-how-do-i-convert-a-string-to-an-number
+   if test (printf "$num > 0\n"| bc) -eq "1";
+   and test -z $ALREADY_RAN_TMUX_STARTUP;
+    set -x ALREADY_RAN_TMUX_STARTUP true;
+    fish ~/fish_scripts/tmux_startup.fish;
+   end;
+end
+    
+
 set -x TERM xterm-256color
 
 set -x LANG en_US.UTF-8
