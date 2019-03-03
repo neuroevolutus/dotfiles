@@ -12,19 +12,14 @@ plug "andreyorst/powerline.kak" %{
 plug "lenormf/kakoune-extra"
 plug "alexherbo2/select.kak"
 plug "alexherbo2/portal.kak"
-plug "andreyorst/smarttab.kak
+plug "andreyorst/smarttab.kak" %{
+    set-option global softtabstop 4 # or other preferred value
+    set-option global tabstop 4 # or other preferred value
+}
 
 hook global InsertChar j %{ try %{
       exec -draft hH <a-k>jj<ret> d
         exec <esc>
-}}
-
-hook global InsertChar \t %{ try %{
-      execute-keys -draft "h<a-h><a-k>\A\h+\z<ret><a-;>;%opt{indentwidth}@"
-}}
-
-hook global InsertDelete ' ' %{ try %{
-      execute-keys -draft 'h<a-h><a-k>\A\h+\z<ret>i<space><esc><lt>'
 }}
 
 # Be sure to put
