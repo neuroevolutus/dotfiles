@@ -33,5 +33,5 @@ set -x PATH ~/.local/bin/ $PATH
 set -x PATH /opt/local $PATH
 set -x PATH /usr/local/opt/go/libexec/bin $PATH
 
-thefuck --alias | source
+export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
