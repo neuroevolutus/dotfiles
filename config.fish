@@ -8,30 +8,30 @@ fish_vi_key_bindings
 #    # https://stackoverflow.com/questions/1786888/in-bash-shell-script-how-do-i-convert-a-string-to-an-number
 #    if test (printf "$num > 0\n"| bc) -eq "1";
 #    and test -z $ALREADY_RAN_TMUX_STARTUP;
-#     set -x ALREADY_RAN_TMUX_STARTUP true;
+#     set -gx ALREADY_RAN_TMUX_STARTUP true;
 #     fish ~/fish_scripts/tmux_startup.fish;
 #    end;
 # end
     
 
-set -x TERM xterm-256color
+set -gx TERM xterm-256color
 
-set -x LANG en_US.UTF-8
-set -x LC_COLLATE en_US.UTF-8
-set -x LC_CTYPE en_US.UTF-8
-set -x LC_MESSAGES en_US.UTF-8
-set -x LC_MONETARY en_US.UTF-8
-set -x LC_NUMERIC en_US.UTF-8
-set -x LC_TIME en_US.UTF-8
-set -x LC_ALL en_US.UTF-8
+set -gx LANG en_US.UTF-8
+set -gx LC_COLLATE en_US.UTF-8
+set -gx LC_CTYPE en_US.UTF-8
+set -gx LC_MESSAGES en_US.UTF-8
+set -gx LC_MONETARY en_US.UTF-8
+set -gx LC_NUMERIC en_US.UTF-8
+set -gx LC_TIME en_US.UTF-8
+set -gx LC_ALL en_US.UTF-8
 
-set -x EDITOR /usr/local/bin/kak
+set -gx EDITOR /usr/local/bin/kak
 
-set -x PATH $HOME/.cargo/bin              $PATH
-set -x PATH $HOME/.local/bin/             $PATH
-set -x PATH /opt/local                    $PATH
-set -x PATH /usr/local/opt/go/libexec/bin $PATH
-set -x PATH $HOME/.my_applications        $PATH
+set -gx PATH $HOME/.cargo/bin              $PATH
+set -gx PATH $HOME/.local/bin/             $PATH
+set -gx PATH /opt/local                    $PATH
+set -gx PATH /usr/local/opt/go/libexec/bin $PATH
+set -gx PATH $HOME/.my_applications        $PATH
 
 export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
 export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
