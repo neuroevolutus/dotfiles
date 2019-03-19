@@ -28,10 +28,10 @@ set -x LC_ALL en_US.UTF-8
 set -x EDITOR /usr/local/bin/kak
 
 set -x PATH $HOME/.cargo/bin              $PATH
-set -x PATH ~/.local/bin/                 $PATH
+set -x PATH $HOME/.local/bin/             $PATH
 set -x PATH /opt/local                    $PATH
 set -x PATH /usr/local/opt/go/libexec/bin $PATH
-set -x PATH ~/.my_applications            $PATH
+set -x PATH $HOME/.my_applications        $PATH
 
 export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
 export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
