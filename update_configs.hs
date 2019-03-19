@@ -29,3 +29,4 @@ main :: IO ()
 main = do { mapM_ (\(_, b) -> mkDir     b) filesToPaths
           ; mapM_ (\(a, b) -> cpToDir a b) filesToPaths
           }
+
