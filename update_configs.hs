@@ -7,17 +7,20 @@ import Turtle
 import Data.Foldable
 import qualified Data.Text as Text
 
+data OS = MAC | WINDOWS | LINUX
+
 filesToPaths :: [(Text, Text)]
-filesToPaths =  [("kakrc"        , "~/.config/kak/")           ,
-                 ("init.vim"     , "~/.config/nvim/")          ,
-                 ("alacritty.yml", "~/.config/alacritty/")     ,
-                 ("config.fish"  , "~/.config/fish/")          ,
-                 (".inputrc"     , "~/")                       ,
-                 (".tmux.conf"   , "~/")                       ,
-                 ("kakrc"        , "~/.config/kak")            ,
-                 ("fish_scripts/", "~/fish_scripts/")          ,
-                 ("functions/"   , "~/.config/fish/functions/"),
-                 ("startup.kak"  , "~/.config/kak/autoload/")  ]
+filesToPaths =  [("kakrc"          , "$HOME/.config/kak/")           ,
+                 ("init.vim"       , "$HOME/.config/nvim/")          ,
+                 ("alacritty.yml"  , "$HOME/.config/alacritty/")     ,
+                 ("config.fish"    , "$HOME/.config/fish/")          ,
+                 (".inputrc"       , "$HOME/")                       ,
+                 (".tmux.conf"     , "$HOME/")                       ,
+                 ("kakrc"          , "$HOME/.config/kak")            ,
+                 ("fish_scripts/"  , "$HOME/fish_scripts/")          ,
+                 ("functions/"     , "$HOME/.config/fish/functions/"),
+                 ("startup.kak"    , "$HOME/.config/kak/autoload/")  ,
+                 ("spicetify_data/", "$HOME/spicetify_data/")        ]
 
 cpToDir :: Text -> Text -> IO ExitCode
 cpToDir file path = shell (Text.concat ["cp -rf ", file, " ", path]) empty
