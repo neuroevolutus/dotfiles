@@ -1,4 +1,12 @@
-tion KeyboardShortcut() {
+//@ts-check
+
+// NAME: Keyboard Shortcut
+// AUTHOR: khanhas
+// DESCRIPTION: Register a few more keybinds to support keyboard-driven navigation in Spotify client. 
+
+/// <reference path="../globals.d.ts" />
+
+(function KeyboardShortcut() {
     if (!Spicetify.Keyboard) {
         setTimeout(KeyboardShortcut, 1000);
         return;
@@ -325,4 +333,3 @@ tion KeyboardShortcut() {
         toClick.click();
     }
 })();
-
