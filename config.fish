@@ -8,30 +8,33 @@ fish_vi_key_bindings
 #    # https://stackoverflow.com/questions/1786888/in-bash-shell-script-how-do-i-convert-a-string-to-an-number
 #    if test (printf "$num > 0\n"| bc) -eq "1";
 #    and test -z $ALREADY_RAN_TMUX_STARTUP;
-#     set -Ux ALREADY_RAN_TMUX_STARTUP true;
+#     set ALREADY_RAN_TMUX_STARTUP true;
 #     fish ~/fish_scripts/tmux_startup.fish;
 #    end;
 # end
     
 
-set -Ux TERM xterm-256color
+set TERM xterm-256color
 
-set -Ux LANG en_US.UTF-8
-set -Ux LC_COLLATE en_US.UTF-8
-set -Ux LC_CTYPE en_US.UTF-8
-set -Ux LC_MESSAGES en_US.UTF-8
-set -Ux LC_MONETARY en_US.UTF-8
-set -Ux LC_NUMERIC en_US.UTF-8
-set -Ux LC_TIME en_US.UTF-8
-set -Ux LC_ALL en_US.UTF-8
+set LANG en_US.UTF-8
+set LC_COLLATE en_US.UTF-8
+set LC_CTYPE en_US.UTF-8
+set LC_MESSAGES en_US.UTF-8
+set LC_MONETARY en_US.UTF-8
+set LC_NUMERIC en_US.UTF-8
+set LC_TIME en_US.UTF-8
+set LC_ALL en_US.UTF-8
 
-set -Ux EDITOR /usr/local/bin/kak
+set EDITOR /usr/local/bin/kak
 
-set -Ux PATH $HOME/.cargo/bin              $PATH
-set -Ux PATH $HOME/.local/bin/             $PATH
-set -Ux PATH /opt/local                    $PATH
-set -Ux PATH /usr/local/opt/go/libexec/bin $PATH
-set -Ux PATH $HOME/.my_applications        $PATH
+# https://github.com/fish-shell/fish-shell/issues/527, 3rd comment down                 (properly appending to PATH)
+# https://stackoverflow.com/questions/51597846/tmux-fish-shell-conf-being-sourced-twice (Avoiding adding to PATH unnecessarily)
+
+contains $HOME/.cargo/bin              $PATH; or set PATH $HOME/.cargo/bin              $PATH
+contains $HOME/.local/bin/             $PATH; or set PATH $HOME/.local/bin/             $PATH
+contains /opt/local                    $PATH; or set PATH /opt/local                    $PATH
+contains /usr/local/opt/go/libexec/bin $PATH; or set PATH /usr/local/opt/go/libexec/bin $PATH
+contains $HOME/.my_applications        $PATH; or set PATH $HOME/.my_applications        $PATH
 
 export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
 export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
