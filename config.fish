@@ -2,15 +2,6 @@ fish_vi_key_bindings
 
 set TERM xterm-256color
 
-set LANG en_US.UTF-8
-set LC_COLLATE en_US.UTF-8
-set LC_CTYPE en_US.UTF-8
-set LC_MESSAGES en_US.UTF-8
-set LC_MONETARY en_US.UTF-8
-set LC_NUMERIC en_US.UTF-8
-set LC_TIME en_US.UTF-8
-set LC_ALL en_US.UTF-8
-
 set EDITOR /usr/local/bin/kak
 
 # https://github.com/fish-shell/fish-shell/issues/527, 3rd comment down                 (properly appending to PATH)
