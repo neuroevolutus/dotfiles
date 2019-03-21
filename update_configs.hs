@@ -21,7 +21,7 @@ filesToPaths =  [("kakrc"           , "$HOME/.config/kak/")           ,
                  ("functions/"      , "$HOME/.config/fish/functions/"),
                  ("startup.kak"     , "$HOME/.config/kak/autoload/")  ,
                  ("spicetify_data/" , "$HOME/spicetify_data/")        ,
-                 ("slack_theme.txt", "$HOME/")                       ]
+                 ("slack_theme.txt" , "$HOME/")                       ]
 
 cpToDir :: Text -> Text -> IO ExitCode
 cpToDir file path = shell (Text.concat ["cp -rf ", file, " ", path]) empty
