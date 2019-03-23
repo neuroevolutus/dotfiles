@@ -2,6 +2,8 @@
 
 set number
 set clipboard=unnamed
+" To perform escape using home row keys
+imap jj <Esc>
 
 call plug#begin("~/.local/share/nvim/plugged")
 
@@ -126,3 +128,4 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
