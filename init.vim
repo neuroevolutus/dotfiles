@@ -1,9 +1,12 @@
 " Location: ~/.config/nvim/init.vim
 
 set number
+set expandtab
+set mouse=nicr
 set clipboard=unnamed
 " To perform escape using home row keys
 imap jj <Esc>
+vmap nn <Esc>
 
 call plug#begin("~/.local/share/nvim/plugged")
 
@@ -19,8 +22,21 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " https://github.com/tpope/vim-fugitive
 Plug 'tpope/vim-fugitive'
+" https://github.com/godlygeek/tabular
+Plug 'godlygeek/tabular'
+" https://github.com/romgrk/winteract.vim
+Plug 'romgrk/winteract.vim'
+" https://github.com/907th/vim-auto-save
+Plug '907th/vim-auto-save'
 
 call plug#end()
+
+" AutoSave configuration
+let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save_events = ["InsertLeave", "TextChanged"]
+
+" Winteract configuration
+nmap <leader>w :InteractiveWindow<CR>
 
 " Nord configuration
 colorscheme nord
@@ -28,7 +44,8 @@ let g:nord_italic = 1
 let g:nord_underline = 1
 let g:nord_italic_comments = 1
 let g:nord_uniform_status_lines = 1
-let g:nord_comment_brightness = 12
+" The below attribute was deprecated 
+" let g:nord_comment_brightness = 12
 let g:nord_uniform_diff_background = 1
 let g:nord_cursor_line_number_background = 1
 
