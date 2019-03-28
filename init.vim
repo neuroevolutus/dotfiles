@@ -4,9 +4,66 @@ set number
 set expandtab
 set mouse=nicr
 set clipboard=unnamed
+set ttimeoutlen=100
 " To perform escape using home row keys
 imap jj <Esc>
 vmap nn <Esc>
+nmap 00 :
+
+" https://til.hashrocket.com/posts/17c44eda91-persistent-folds-between-vim-sessions
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent loadview
+augroup END
+
+" Veonim configuration
+if exists('veonim')
+        let g:vscode_extensions = [
+                \'rust-lang.rust',
+                \'ms-python.python',
+        \]
+
+        set guifont='14pt\ Hasklig\ Medium'
+        set linespace=10
+
+        " multiple nvim instances
+        nno <silent> <c-t>c :Veonim vim-create<cr>
+        nno <silent> <c-g> :Veonim vim-switch<cr>
+        nno <silent> <c-t>, :Veonim vim-rename<cr>
+
+        " workspace functions
+        nno <silent> ,f :Veonim files<cr>
+        nno <silent> ,e :Veonim explorer<cr>
+        nno <silent> ,b :Veonim buffers<cr>
+        nno <silent> ,d :Veonim change-dir<cr>
+        "or with a starting dir: nno <silent> ,d :Veonim change-dir ~/proj<cr>
+
+        " searching text
+        nno <silent> <space>fw :Veonim grep-word<cr>
+        vno <silent> <space>fw :Veonim grep-selection<cr>
+        nno <silent> <space>fa :Veonim grep<cr>
+        nno <silent> <space>ff :Veonim grep-resume<cr>
+        nno <silent> <space>fb :Veonim buffer-search<cr>
+
+        " language features
+        nno <silent> sr :Veonim rename<cr>
+        nno <silent> sd :Veonim definition<cr>
+        nno <silent> si :Veonim implementation<cr>
+        nno <silent> st :Veonim type-definition<cr>
+        nno <silent> sf :Veonim references<cr>
+        nno <silent> sh :Veonim hover<cr>
+        nno <silent> sl :Veonim symbols<cr>
+        nno <silent> so :Veonim workspace-symbols<cr>
+        nno <silent> sq :Veonim code-action<cr>
+        nno <silent> sk :Veonim highlight<cr>
+        nno <silent> sK :Veonim highlight-clear<cr>
+        nno <silent> ,n :Veonim next-usage<cr>
+        nno <silent> ,p :Veonim prev-usage<cr>
+        nno <silent> sp :Veonim show-problem<cr>
+        nno <silent> <c-n> :Veonim next-problem<cr>
+        nno <silent> <c-p> :Veonim prev-problem<cr>
+endif
 
 call plug#begin("~/.local/share/nvim/plugged")
 
@@ -22,6 +79,9 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " https://github.com/tpope/vim-fugitive
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'sheerun/vim-polyglot'
 " https://github.com/godlygeek/tabular
 Plug 'godlygeek/tabular'
 " https://github.com/romgrk/winteract.vim
@@ -48,6 +108,12 @@ let g:nord_uniform_status_lines = 1
 " let g:nord_comment_brightness = 12
 let g:nord_uniform_diff_background = 1
 let g:nord_cursor_line_number_background = 1
+
+" --------------------------------- OmniSharp configuration --------------------------------- 
+let g:OmniSharp_server_use_mono = 1
+" OmniSharp won't work without this setting
+filetype plugin on
+
 
 " --------------------------------- OmniSharp configuration --------------------------------- 
 let g:OmniSharp_server_use_mono = 1
@@ -138,11 +204,5 @@ let g:OmniSharp_want_snippet=1
 let g:ale_linters = { 'cs': ['OmniSharp'] }
 
 " NerdTree configuration
-map <C-n> :NERDTreeToggle<CR>
-
-"split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
