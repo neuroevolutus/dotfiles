@@ -1,21 +1,26 @@
 " Location: ~/.config/nvim/init.vim
 
-set number
-set expandtab
+set number relativenumber
+" To keep the cursor vertically
+" centered on the screen
+set scrolloff=999
+set tabstop=4
+set noexpandtab
 set mouse=nicr
 set clipboard=unnamed
 set ttimeoutlen=100
+
+filetype plugin on
+
 " To perform escape using home row keys
 imap jj <Esc>
 vmap nn <Esc>
-nmap 00 :
 
-" https://til.hashrocket.com/posts/17c44eda91-persistent-folds-between-vim-sessions
-augroup AutoSaveFolds
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent loadview
-augroup END
+" Navigate window splits more easily
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Veonim configuration
 if exists('veonim')
@@ -88,12 +93,18 @@ Plug 'godlygeek/tabular'
 Plug 'romgrk/winteract.vim'
 " https://github.com/907th/vim-auto-save
 Plug '907th/vim-auto-save'
+Plug 'vim-scripts/restore_view.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 call plug#end()
 
 " AutoSave configuration
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
+
+" NERDTree configuration
+map <C-n> :NERDTreeToggle<CR>
 
 " Winteract configuration
 nmap <leader>w :InteractiveWindow<CR>

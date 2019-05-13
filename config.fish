@@ -4,6 +4,8 @@ set TERM xterm-256color
 
 set EDITOR /usr/local/bin/nvim
 
+alias htop 'htop --tree --sort-key=PERCENT_MEM'
+
 # https://github.com/fish-shell/fish-shell/issues/527, 3rd comment down                 (properly appending to PATH)
 # https://stackoverflow.com/questions/51597846/tmux-fish-shell-conf-being-sourced-twice (Avoiding adding to PATH unnecessarily)
 
