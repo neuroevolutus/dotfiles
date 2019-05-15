@@ -17,6 +17,10 @@ filetype plugin on
 " To perform escape using home row keys
 imap jj <Esc>
 
+" Set tab behavior for different filetypes
+" Referenced from comment in https://stackoverflow.com/questions/158968/changing-vim-indentation-behavior-by-file-type
+autocmd FileType hs setlocal shiftwidth=4 tabstop=4
+
 " Navigate window splits more easily
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
