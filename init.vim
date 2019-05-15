@@ -1,6 +1,8 @@
 " Location: ~/.config/nvim/init.vim
 
 set number relativenumber
+" Show matching parentheses
+set showmatch
 " To keep the cursor vertically
 " centered on the screen
 set scrolloff=999
@@ -14,7 +16,6 @@ filetype plugin on
 
 " To perform escape using home row keys
 imap jj <Esc>
-vmap nn <Esc>
 
 " Navigate window splits more easily
 nnoremap <C-h> <C-w>h
@@ -70,6 +71,7 @@ if exists('veonim')
         nno <silent> <c-p> :Veonim prev-problem<cr>
 endif
 
+" VimPlug configuration
 call plug#begin("~/.local/share/nvim/plugged")
 
 " https://github.com/arcticicestudio/nord-vim
@@ -98,6 +100,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 call plug#end()
+" End VimPlug configuration
 
 " AutoSave configuration
 let g:auto_save = 1  " enable AutoSave on Vim startup
@@ -146,7 +149,7 @@ set completeopt=longest,menuone,preview
 " There is a performance penalty with this (especially on Mono).
 " By default, only Type/Method signatures are fetched. Full documentation can
 " still be fetched when you need it with the :OmniSharpDocumentation command.
-"let g:omnicomplete_fetch_full_documentation = 1
+"let g:omnicomplete_fetch_full_documentation = 0
 
 " Set desired preview window height for viewing documentation.
 " You might also want to look at the echodoc plugin.
