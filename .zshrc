@@ -70,6 +70,7 @@ ZSH_THEME="oxide"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 		common-aliases
+		copyfile
 		docker
 		dotenv
 		fasd
