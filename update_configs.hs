@@ -10,18 +10,19 @@ import qualified Data.Text as Text
 data OS = MAC | WINDOWS | LINUX
 
 filesToPaths :: [(Text, Text)]
-filesToPaths =  [("kakrc"           , "$HOME/.config/kak/")           ,
-                 ("init.vim"        , "$HOME/.config/nvim/")          ,
-                 ("alacritty.yml"   , "$HOME/.config/alacritty/")     ,
-                 ("config.fish"     , "$HOME/.config/fish/")          ,
-                 (".inputrc"        , "$HOME/")                       ,
-                 (".tmux.conf"      , "$HOME/")                       ,
-                 ("kakrc"           , "$HOME/.config/kak")            ,
-                 ("fish_scripts/"   , "$HOME/fish_scripts/")          ,
-                 ("functions/"      , "$HOME/.config/fish/functions/"),
-                 ("startup.kak"     , "$HOME/.config/kak/autoload/")  ,
-                 ("spicetify_data/" , "$HOME/spicetify_data/")        ,
-                 ("slack_theme.txt" , "$HOME/")                       ]
+filesToPaths =  [ ( "kakrc"           , "$HOME/.config/kak/"            ) ,
+                  ( "init.vim"        , "$HOME/.config/nvim/"           ) ,
+                  ( "alacritty.yml"   , "$HOME/.config/alacritty/"      ) ,
+                  ( "config.fish"     , "$HOME/.config/fish/"           ) ,
+                  ( ".inputrc"        , "$HOME/"                        ) ,
+                  ( ".tmux.conf"      , "$HOME/"                        ) ,
+                  ( "kakrc"           , "$HOME/.config/kak"             ) ,
+                  ( "fish_scripts/"   , "$HOME/fish_scripts/"           ) ,
+                  ( "functions/"      , "$HOME/.config/fish/functions/" ) ,
+                  ( "startup.kak"     , "$HOME/.config/kak/autoload/"   ) ,
+                  ( "spicetify_data/" , "$HOME/spicetify_data/"         ) ,
+                  ( ".zshrc"          , "$HOME/"                        ) ,
+                  ( "slack_theme.txt" , "$HOME/"                        ) ]
 
 cpToDir :: Text -> Text -> IO ExitCode
 cpToDir file path = shell (Text.concat ["cp -rf ", file, " ", path]) empty
