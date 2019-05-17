@@ -75,6 +75,7 @@ plugins=(
 		dotenv
 		fasd
 		git
+		history
 		osx
 		pep8
 		per-directory-history
@@ -90,12 +91,29 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# Opens nvim and recursively searches the
+# current directory to open a buffer for
+# each file
+function open_nvim_rec() {
+		nvim **/*
+}
+zle -N open_nvim_rec
+bindkey '^n' open_nvim_rec
+
+function source_zshrc() {
+		source ~/.zshrc
+}
+zle -N source_zshrc
+bindkey '^s' source_zshrc
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+
+export ZSH_TMUX_AUTOSTART="true"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -115,3 +133,5 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias grep="ripgrep"
