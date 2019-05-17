@@ -91,7 +91,6 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " https://github.com/tpope/vim-fugitive
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 " https://github.com/godlygeek/tabular
 Plug 'godlygeek/tabular'
@@ -127,11 +126,51 @@ let g:nord_uniform_status_lines = 1
 let g:nord_uniform_diff_background = 1
 let g:nord_cursor_line_number_background = 1
 
+" --------------------------------- NERDCommenter Configuration --------------------------------- 
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
+" --------------------------------- End NERDCommenter Configuration --------------------------------- 
+
+
 " --------------------------------- OmniSharp configuration --------------------------------- 
 let g:OmniSharp_server_use_mono = 1
 " OmniSharp won't work without this setting
 filetype plugin on
 
+" Set the type lookup function to use the preview window instead of echoing it
+let g:OmniSharp_typeLookupInPreview = 1
+
+" Timeout in seconds to wait for a response from the server
+let g:OmniSharp_timeout = 5
+
+" Don't autoselect first omnicomplete option, show options even if there is only
+" one (so the preview documentation is accessible). Remove 'preview' if you
+" don't want to see any documentation whatsoever.
+set completeopt=longest,menuone,preview
+
+" Fetch full documentation during omnicomplete requests.
+" There is a performance penalty with this (especially on Mono).
 
 " --------------------------------- OmniSharp configuration --------------------------------- 
 let g:OmniSharp_server_use_mono = 1
