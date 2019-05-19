@@ -3,6 +3,9 @@
 set number relativenumber
 " Show matching parentheses
 set showmatch
+" To keep undo history even when switching
+" between file buffers
+set hidden
 " To keep the cursor vertically
 " centered on the screen
 set scrolloff=999
@@ -100,6 +103,7 @@ Plug 'romgrk/winteract.vim'
 Plug '907th/vim-auto-save'
 Plug 'vim-scripts/restore_view.vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 call plug#end()
