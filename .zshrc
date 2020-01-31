@@ -8,7 +8,7 @@ export ZSH="/Users/abelsen/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="oxide"
+ZSH_THEME="pygmalion"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -91,6 +91,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# Vim keybindings
+bindkey -v
+
 # Opens nvim and recursively searches the
 # current directory to open a buffer for
 # each file
@@ -135,3 +138,4 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias grep="ripgrep"
+alias ls="exa"
