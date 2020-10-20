@@ -1,7 +1,23 @@
+addhl global/ number-lines
+addhl global/ wrap
+set-option global indentwidth 4
+
+hook global BufSetOption filetype=ruby %{
+        set-option buffer formatcmd "rubocop -x -o /dev/null -s '${kak_buffile}' | sed -n '2,$p'"
+}
+
+hook global WinSetOption filetype=ruby %{
+        set-option window lintcmd 'rubocop -l --format emacs'
+	# Use two spaces per tab
+	set buffer tabstop 2
+	set buffer indentwidth 2
+}
+
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
 
 eval %sh{kak-lsp --kakoune -s $kak_session}
 
+plug "TeddyDD/kakoune-wiki"
 plug "delapouite/kakoune-text-objects"
 plug "eraserhd/parinfer-rust"
 plug "andreyorst/powerline.kak" %{
@@ -16,6 +32,9 @@ plug "andreyorst/smarttab.kak" %{
     set-option global softtabstop 4 # or other preferred value
     set-option global tabstop 4 # or other preferred value
 }
+plug "abuffseagull/nord.kak" theme %{ colorscheme nord }
+
+wiki-setup "/Users/abelsen/OneDrive/Documents/Personal/Wiki"
 
 hook global InsertChar j %{ try %{
       exec -draft hH <a-k>jj<ret> d
