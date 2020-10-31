@@ -10,12 +10,26 @@ set hidden
 " centered on the screen
 set scrolloff=999
 set tabstop=4
-set noexpandtab
+
+" https://stackoverflow.com/questions/234564/tab-key-4-spaces-and-auto-indent-after-curly-braces-in-vim
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
+" set noexpandtab
 set mouse=nicr
 set clipboard=unnamed
 set ttimeoutlen=100
 
-filetype plugin on
+"This unsets the "last search pattern" register by hitting return
+" https://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting
+nnoremap <CR> :noh<CR>
+
+" filetype plugin on
 
 " To perform escape using home row keys
 imap jj <Esc>
@@ -84,6 +98,7 @@ call plug#begin("~/.local/share/nvim/plugged")
 " https://github.com/arcticicestudio/nord-vim
 Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 " https://github.com/junegunn/fzf.vim
+Plug '/usr/local/opt/fzf'
 Plug 'https://github.com/junegunn/fzf.vim'
 " https://github.com/w0rp/ale#standard-installation
 Plug 'w0rp/ale'
@@ -105,6 +120,7 @@ Plug 'vim-scripts/restore_view.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'kien/ctrlp.vim'
 
 call plug#end()
 " End VimPlug configuration
@@ -263,6 +279,7 @@ let g:OmniSharp_want_snippet=1
 
 " ALE
 let g:ale_linters = { 'cs': ['OmniSharp'] }
+let g:ale_open_list = 1
 
 " NerdTree configuration
 nnoremap <C-H> <C-W><C-H>
