@@ -11,6 +11,7 @@ file_to_dir = T.let({}, T::Hash[String, String])
 HOME_DIR = T.let(Dir.home + "/", String)
 
 file_to_dir[".gemrc"         ] = HOME_DIR
+file_to_dir[".ruby-version"  ] = HOME_DIR
 file_to_dir[".tmux.conf"     ] = HOME_DIR
 file_to_dir[".zshrc"         ] = HOME_DIR
 file_to_dir["kakrc"          ] = HOME_DIR + ".config/kak/"
