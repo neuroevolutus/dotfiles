@@ -1,5 +1,13 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/ruby/bin:$PATH
+
+# Ruby gems
+# Taken from: https://stackoverflow.com/questions/9792803/how-do-i-run-a-ruby-gem
+gembin=`(gem env | sed -n "s/.*EXECUTABLE DIRECTORY: \(.*\)/\1/p")`
+export PATH=$gembin:$PATH
+
+# SLMNJ
+export PATH=/usr/local/smlnj/bin:"$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/abelsen/.oh-my-zsh"
@@ -87,6 +95,7 @@ plugins=(
 		virtualenvwrapper
 		web-search
 		z
+		zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -122,7 +131,7 @@ export ZSH_TMUX_AUTOSTART="true"
 if [[ -n $SSH_CONNECTION ]]; then
 		export EDITOR='vim'
 else
-		export EDITOR='nvim'
+		export EDITOR='kak'
 fi
 
 # Compilation flags
@@ -137,5 +146,12 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias grep="ripgrep"
+alias grep="rg"
 alias ls="exa"
+
+# For rbenv
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+eval "$(rbenv init -)"
+
+# https://www.freecodecamp.org/news/git-ssh-how-to/
+# eval "$(ssh-agent -s)" # for Mac and Linux
