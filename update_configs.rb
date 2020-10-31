@@ -1,0 +1,21 @@
+# frozen_string_literals: true
+# typed: strict
+
+require "fileutils"
+require "sorbet-runtime"
+
+extend T::Sig
+
+file_to_dir = T.let({}, T::Hash[String, String])
+
+HOME_DIR = T.let(Dir.home + "/", String)
+
+file_to_dir[".gemrc"         ] = HOME_DIR
+file_to_dir[".tmux.conf"     ] = HOME_DIR
+file_to_dir[".zshrc"         ] = HOME_DIR
+file_to_dir["kakrc"          ] = HOME_DIR + ".config/kak/"
+file_to_dir["spicetify_data/"] = HOME_DIR + "spicetify_data/"
+
+file_to_dir.each_pair do |file, directory|
+  FileUtils.cp_r file, directory
+end
