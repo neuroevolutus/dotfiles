@@ -40,7 +40,7 @@ plug "andreyorst/smarttab.kak" %{
 plug "evanrelf/number-toggle.kak"
 # Use elegant colorscheme
 plug "abuffseagull/nord.kak" theme %{ colorscheme nord }
-
+plug 'delapouite/kakoune-livedown'
 plug "occivink/kakoune-expand"
 declare-option str expand_commands %{
   expand-impl %{ exec <a-a>b }
