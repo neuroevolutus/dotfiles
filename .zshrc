@@ -9,6 +9,14 @@ export PATH=$gembin:$PATH
 # SLMNJ
 export PATH=/usr/local/smlnj/bin:"$PATH"
 
+# Homebrew completions setup
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/abelsen/.oh-my-zsh"
 
@@ -77,25 +85,25 @@ ZSH_THEME="pygmalion"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-		common-aliases
-		copyfile
-		docker
-		dotenv
-		fasd
-		git
-		history
-		osx
-		pep8
-		per-directory-history
-		pip
-		pylint
-		python
-		tmux
-		vi-mode
-		virtualenvwrapper
-		web-search
-		z
-		zsh-autosuggestions
+    common-aliases
+    copyfile
+    docker
+    dotenv
+    fasd
+    git
+    history
+    osx
+    pep8
+    per-directory-history
+    pip
+    pylint
+    python
+    tmux
+    vi-mode
+    virtualenvwrapper
+    web-search
+    z
+    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
