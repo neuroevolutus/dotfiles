@@ -4,3 +4,7 @@
 [core]
 	editor = kak
 	filemode = false
+[alias]
+	co = checkout
+[credential]
+	helper = cache --timeout=900
