@@ -85,6 +85,8 @@ ZSH_THEME="pygmalion"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    brew
+    colored-man-pages
     common-aliases
     copyfile
     docker
@@ -98,15 +100,25 @@ plugins=(
     pip
     pylint
     python
+    rails
+    ruby
+    rust
+    safe-paste
+    sbt
+    scala
+    thefuck
     tmux
     vi-mode
     virtualenvwrapper
     web-search
     z
     zsh-autosuggestions
+    zsh_reload
 )
 
 source $ZSH/oh-my-zsh.sh
+
+eval $(thefuck --alias)
 
 # Vim keybindings
 bindkey -v
@@ -114,17 +126,11 @@ bindkey -v
 # Opens nvim and recursively searches the
 # current directory to open a buffer for
 # each file
-function open_nvim_rec() {
-		nvim **/*
+function open_kak_rec() {
+	kak **/*
 }
 zle -N open_nvim_rec
-bindkey '^n' open_nvim_rec
-
-function source_zshrc() {
-		source ~/.zshrc
-}
-zle -N source_zshrc
-bindkey '^s' source_zshrc
+bindkey '^k' open_kak_rec
 
 # User configuration
 
@@ -137,9 +143,9 @@ export ZSH_TMUX_AUTOSTART="true"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-		export EDITOR='vim'
+	export EDITOR='vim'
 else
-		export EDITOR='kak'
+	export EDITOR='kak'
 fi
 
 # Compilation flags
@@ -154,11 +160,17 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias grep="rg"
+alias grep="rga"
 alias ls="exa"
-
+alias ll="exa -la"
+alias cdu="cd .."
+export FZF_DEFAULT_COMMAND="rga"
+export FZF_DEFAULT_OPTS=""
+# Make sure that Unicode characters display correctly when using the `less` as a pager.
+LESSCHARSET=UTF-8
 # For rbenv
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+export MONO_GAC_PREFIX="/usr/local"
 eval "$(rbenv init -)"
 
 # https://www.freecodecamp.org/news/git-ssh-how-to/
