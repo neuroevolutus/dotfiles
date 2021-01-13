@@ -1,7 +1,37 @@
+set-option global autoreload yes
+
 addhl global/ number-lines
 addhl global/ wrap
-set-option global tabstop 2
-set-option global indentwidth 2
+
+# Indentation
+# https://github.com/mawww/kakoune/wiki/EditorConfig
+hook global WinCreate ^[^*]+$ %{editorconfig-load}
+map global insert <tab> '<a-;><gt>'
+map global insert <s-tab> '<a-;><lt>'
+
+hook global InsertCompletionShow .* %{
+    try %{
+        # this command temporarily removes cursors preceded by whitespace;
+        # if there are no cursors left, it raises an error, does not
+        # continue to execute the mapping commands, and the error is eaten
+        # by the `try` command so no warning appears.
+        execute-keys -draft 'h<a-K>\h<ret>'
+        map window insert <tab> <c-n>
+        map window insert <s-tab> <c-p>
+        hook -once -always window InsertCompletionHide .* %{
+            map window insert <tab> <tab>
+            map window insert <s-tab> <s-tab>
+        }
+    }
+}
+# Use 'jj' as sequence to escape into
+# command mode.
+hook global InsertChar j %{
+  try %{
+    exec -draft hH <a-k>jj<ret> d
+    exec <esc>
+	}
+}
 
 # bc calculator integration as from:
 # https://github.com/mawww/kakoune/wiki/Qalculate!
@@ -13,10 +43,8 @@ map global user 'w' %{:echo %sh{wc -w <lt><lt><lt> "${kak_selection}"}<ret>}
 
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
 
-eval %sh{kak-lsp --kakoune -s $kak_session}
-
 plug "TeddyDD/kakoune-wiki"
-wiki-setup "/Users/abelsen/OneDrive/Documents/Personal/Wiki"
+wiki-setup "/Users/abelsen/OneDrive/Documents/個人/ウィキ/"
 
 plug "delapouite/kakoune-text-objects"
 plug "eraserhd/parinfer-rust"
@@ -25,16 +53,17 @@ plug "eraserhd/parinfer-rust"
 plug "andreyorst/fzf.kak"
 map global normal <c-p> ': fzf-mode<ret>'
 
-plug "andreyorst/powerline.kak" %{
-    hook -once global WinCreate .* %{
-        powerline-theme solarized-dark
-    }
+plug "jdugan6240/powerline.kak" config %{
+    powerline-start
 }
-plug "lenormf/kakoune-extra"
-plug "andreyorst/smarttab.kak" %{
-    set-option global softtabstop 4 # or other preferred value
-    set-option global tabstop 4 # or other preferred value
-}
+
+# plug "lenormf/kakoune-extra"
+# plug "andreyorst/smarttab.kak" %{
+#   	declare-option softtabstop
+#     set-option global softtabstop 2 # or other preferred value
+#     set-option global tabstop 2 # or other preferred value
+#     set-option global indentwidth 2
+# }
 # For toggling between relative and absolute line numbers
 # based on the current mode.
 plug "evanrelf/number-toggle.kak"
@@ -42,6 +71,10 @@ plug "evanrelf/number-toggle.kak"
 plug "abuffseagull/nord.kak" theme %{ colorscheme nord }
 plug 'delapouite/kakoune-livedown'
 plug "occivink/kakoune-expand"
+
+eval %sh{kak-lsp --kakoune -s $kak_session}
+lsp-enable
+
 declare-option str expand_commands %{
   expand-impl %{ exec <a-a>b }
   expand-impl %{ exec <a-a>B }
@@ -55,13 +88,6 @@ map -docstring "expand" global user e ': expand<ret>'
 declare-user-mode expand
 map -docstring "expand" global expand <space> ': expand<ret>'
 map -docstring "expand ↻" global user E       ': expand; enter-user-mode -lock expand<ret>'
-
-hook global InsertChar j %{
-  try %{
-    exec -draft hH <a-k>jj<ret> d
-    exec <esc>
-	}
-}
 
 # Customize buffer and window options when working with ruby
 # files.
@@ -79,6 +105,12 @@ hook global WinSetOption filetype=ruby %{
     expandtab
 }
 
+hook global WinSetOption filetype=markdown %{
+    # Set the width of a tab to be equal to four characters.
+    set buffer tabstop 4
+    # Use four spaces on indent.
+    set buffer indentwidth 4
+}
 # Be sure to put
 #  eval %sh{kak-lsp --kakoune -s $kak_session}
 # 

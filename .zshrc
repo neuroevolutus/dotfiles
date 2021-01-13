@@ -1,4 +1,15 @@
-# If you come from bash you might have to change your $PATH.
+# LLVM
+export PATH="/usr/local/opt/llvm@9/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/llvm@9/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm@9/include"
+
+# Pijul
+export PATH="/Users/abelsen/.cargo/bin:$PATH"
+
+# Elixir / Erlang
+export MANPATH="/usr/local/opt/erlang/lib/erlang/man:$MANPATH"
+
+# Ruby
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/ruby/bin:$PATH
 
 # Ruby gems
@@ -61,7 +72,7 @@ ZSH_THEME="pygmalion"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -129,7 +140,7 @@ bindkey -v
 function open_kak_rec() {
 	kak **/*
 }
-zle -N open_nvim_rec
+zle -N open_kak_rec
 bindkey '^k' open_kak_rec
 
 # User configuration
@@ -160,12 +171,16 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias grep="rga"
-alias ls="exa"
-alias ll="exa -la"
 alias cdu="cd .."
+alias grep="rga"
+alias ll="exa -la"
+alias ls="exa"
+alias r="rails"
+alias rlg="repl git"
+
 export FZF_DEFAULT_COMMAND="rga"
 export FZF_DEFAULT_OPTS=""
+
 # Make sure that Unicode characters display correctly when using the `less` as a pager.
 LESSCHARSET=UTF-8
 # For rbenv
