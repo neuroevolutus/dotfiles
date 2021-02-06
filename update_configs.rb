@@ -17,7 +17,8 @@ file_to_dir[".ruby-version"         ] = HOME_DIR
 file_to_dir[".tmux.conf"            ] = HOME_DIR
 file_to_dir[".zshrc"                ] = HOME_DIR
 file_to_dir["kakrc"                 ] = HOME_DIR + ".config/kak/"
-file_to_dir["spicetify_data/"       ] = HOME_DIR + "spicetify_data/"
+file_to_dir["kitty/"                ] = HOME_DIR + ".config/"
+file_to_dir["spicetify_data/"       ] = HOME_DIR
 file_to_dir["config.toml"           ] = "/Users/abelsen/Library/Application Support/org.nushell.nu/"
 
 file_to_dir[ "/Users/abelsen/Library/Application Support/org.nushell.nu/"                ] = HOME_DIR + "config.toml"

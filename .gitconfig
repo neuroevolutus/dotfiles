@@ -1,10 +1,16 @@
 [user]
-	name = Abel Sen
-	email = sentabel@gmail.com
+    name = Abel Sen
+    email = 19356702+neuroevolutus@users.noreply.github.com
 [core]
-	editor = kak
-	filemode = false
+    editor = kak
+    filemode = false
 [alias]
-	co = checkout
+    cm = commit
+    co = checkout
+    mg = merge
+    nb = branch -b
+    ps = push
+    rv = revert
+    st = status
 [credential]
-	helper = cache --timeout=900
+    helper = cache --timeout=900
