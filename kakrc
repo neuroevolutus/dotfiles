@@ -30,6 +30,11 @@ wiki-setup "/Users/abelsen/OneDrive/Documents/個人/ウィキ/"
 plug "delapouite/kakoune-text-objects"
 plug "eraserhd/parinfer-rust"
 
+# Incrementing / decrementing numbers in Kakoune
+plug "https://gitlab.com/Screwtapello/kakoune-inc-dec"
+map global normal <c-a> ': inc-dec-modify-numbers + 1<ret>'
+map global normal <c-x> ': inc-dec-modify-numbers - 1<ret>'
+
 # fzf setup
 plug "andreyorst/fzf.kak"
 map global normal <c-p> ': fzf-mode<ret>'
@@ -46,17 +51,20 @@ plug "abuffseagull/nord.kak" theme %{ colorscheme nord }
 plug 'delapouite/kakoune-livedown'
 plug "occivink/kakoune-expand"
 plug "lePerdu/kakboard" %{
-        hook global WinCreate .* %{ kakboard-enable }
+    hook global WinCreate .* %{ kakboard-enable }
 }
 plug "caksoylar/kakoune-smooth-scroll"
 
 eval %sh{kak-lsp --kakoune -s $kak_session}
-lsp-enable
-
+hook global WinSetOption filetype=(c|cpp|elixir|elm|haskell|javascript|python|ruby|rust|typescript) %{
+    lsp-enable-window
+    lsp-auto-hover-enable
+    lsp-diagnostic-lines-enable
+}
 # Customize buffer and window options when working with ruby
 # files.
 hook global BufSetOption filetype=ruby %{
-    set-option buffer formatcmd "rubocop -x -o /dev/null -s '${kak_buffile}' | sed -n '2,$p'"
+set-option buffer formatcmd "rubocop -x -o /dev/null -s '${kak_buffile}' | sed -n '2,$p'"
 }
 
 hook global WinSetOption filetype=ruby %{
