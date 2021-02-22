@@ -14,7 +14,6 @@ file_to_dir[".editorconfig"         ] = HOME_DIR
 file_to_dir[".gemrc"                ] = HOME_DIR
 file_to_dir[".gitconfig"            ] = HOME_DIR
 file_to_dir[".ruby-version"         ] = HOME_DIR
-file_to_dir[".zshrc"                ] = HOME_DIR
 file_to_dir["kitty/"                ] = HOME_DIR + ".config/"
 file_to_dir["spicetify_data/"       ] = HOME_DIR
 file_to_dir["config.toml"           ] = "/Users/abelsen/Library/Application Support/org.nushell.nu/"
