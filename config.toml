@@ -1,6 +1,11 @@
+colored_output = "true"
+complete_from_path = "true"
 completion_mode = "circular"
-path = ["/Users/abelsen/.rbenv/shims", "/usr/local/smlnj/bin", "/usr/local/lib/ruby/gems/3.0.0/bin", "/Users/abelsen/bin", "/usr/local/bin", "/usr/local/opt/ruby/bin", "/Users/abelsen/.cargo/bin", "/usr/local/opt/llvm@9/bin", "/usr/local/bin", "/usr/bin", "/bin", "/usr/sbin", "/sbin", "/Library/TeX/texbin", "/opt/X11/bin"]
+edit_mode = "vi"
+pager = "bat"
+path = ["/Users/abelsen/.local/bin", "/Users/abelsen/.rbenv/shims", "/usr/local/smlnj/bin", "/usr/local/lib/ruby/gems/3.0.0/bin", "/Users/abelsen/bin", "/usr/local/bin", "/usr/local/opt/ruby/bin", "/Users/abelsen/.cargo/bin", "/usr/local/opt/llvm@9/bin", "/usr/local/bin", "/usr/bin", "/bin", "/usr/sbin", "/sbin", "/Library/TeX/texbin", "/opt/X11/bin"]
 prompt = "echo $(starship prompt)"
+rm_always_trash = "true"
 
 [env]
 Apple_PubSub_Socket_Render = "/private/tmp/com.apple.launchd.zVE2fX6OAG/Render"
