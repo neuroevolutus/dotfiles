@@ -4,6 +4,7 @@
 [core]
     editor = kak
     filemode = false
+	quotepath = off
 [alias]
     cm = commit
     co = checkout
