@@ -2,7 +2,7 @@
     name = Abel Sen
     email = 19356702+neuroevolutus@users.noreply.github.com
 [core]
-    editor = kak
+    editor = codium
     filemode = false
 	quotepath = off
 [alias]
