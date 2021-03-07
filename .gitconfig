@@ -2,9 +2,17 @@
     name = Abel Sen
     email = 19356702+neuroevolutus@users.noreply.github.com
 [core]
-    editor = codium
+    editor = codium --wait
     filemode = false
 	quotepath = off
+[diff]
+	tool = vscodium
+[difftool "vscodium"]
+	cmd = codium --wait --diff $LOCAL $REMOTE
+[merge]
+	tool = vscodium
+[mergetool "vscodium"]
+	cmd = codium --wait $MERGED
 [alias]
     cm = commit
     co = checkout
