@@ -3,7 +3,25 @@ complete_from_path = "true"
 completion_mode = "circular"
 edit_mode = "vi"
 pager = "bat"
-path = ["/Users/abelsen/.nix-profile/bin", "/Users/abelsen/.local/bin", "/Users/abelsen/.rbenv/shims", "/usr/local/smlnj/bin", "/usr/local/lib/ruby/gems/3.0.0/bin", "/Users/abelsen/bin", "/usr/local/bin", "/usr/local/opt/ruby/bin", "/Users/abelsen/.cargo/bin", "/usr/local/opt/llvm@9/bin", "/usr/bin", "/bin", "/usr/sbin", "/sbin", "/Library/TeX/texbin", "/opt/X11/bin"]
+path = [
+    "/Library/Java",
+    "/Users/abelsen/.nix-profile/bin",
+    "/Users/abelsen/.local/bin",
+    "/Users/abelsen/.rbenv/shims",
+    "/usr/local/smlnj/bin",
+    "/usr/local/lib/ruby/gems/3.0.0/bin",
+    "/Users/abelsen/bin",
+    "/usr/local/bin",
+    "/usr/local/opt/ruby/bin",
+    "/Users/abelsen/.cargo/bin",
+    "/usr/local/opt/llvm@9/bin",
+    "/usr/bin",
+    "/bin",
+    "/usr/sbin",
+    "/sbin",
+    "/Library/TeX/texbin",
+    "/opt/X11/bin",
+]
 prompt = "echo $(starship prompt)"
 rm_always_trash = "true"
 startup = ["alias rm = trash"]
