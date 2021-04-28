@@ -1,1 +1,125 @@
-{"backgrounds":[{"active":true,"display":{"blur":0,"luminosity":-0.1},"id":"4db7f65a-a347-4bb8-8ebc-a580590feb55","key":"background/unsplash"}],"widgets":[{"active":true,"display":{"position":"middleCentre"},"id":"125e136a-4613-43b9-bf48-39aae546da66","key":"widget/time"},{"active":true,"display":{"colour":"#feffff","position":"middleCentre"},"id":"abfe700e-20a8-43a5-b3d6-f186f3049f53","key":"widget/greeting"},{"active":true,"display":{"fontSize":32,"position":"middleCentre"},"id":"1b4ccee4-9f8f-4700-b4a0-d38e355d4cbc","key":"widget/search"},{"active":true,"display":{"position":"middleCentre"},"id":"56f4a10c-f898-4fef-86ab-78caa9b2dd8f","key":"widget/links"},{"active":true,"display":{"position":"middleCentre"},"id":"d105749a-ef2d-464f-be08-2c6c17539153","key":"widget/todo"}],"data":{"1b4ccee4-9f8f-4700-b4a0-d38e355d4cbc":{"searchEngine":"duckduckgo","suggestionsQuantity":4},"56f4a10c-f898-4fef-86ab-78caa9b2dd8f":{"columns":4,"linkOpenStyle":true,"links":[{"icon":"message-circle","name":"Reddit","url":"https://reddit.com"},{"icon":"youtube","name":"YouTube","url":"https://youtube.com"},{"icon":"terminal","name":"asciinema","url":"https://asciinema.org/"},{"icon":"book-open","name":"MDN Web Docs","url":"https://developer.mozilla.org/en-US/"},{"icon":"codepen","name":"CodePen","url":"https://codepen.io"},{"url":"https://css-tricks.com/","name":"CSS Tricks","icon":"zap"},{"url":"https://blog.webdevsimplified.com/","icon":"code","name":"{ WDS }"},{"url":"https://www.rubyguides.com/ruby-post-index/","name":"Ruby Guides","icon":"book"}],"visible":true},"849876b6-03fa-4584-900a-3609f0cc61e4":{"showDetails":true,"units":"si"},"abfe700e-20a8-43a5-b3d6-f186f3049f53":{"name":"アベルさん"},"d105749a-ef2d-464f-be08-2c6c17539153":{"items":[],"show":3}},"_persist":{"version":-1,"rehydrated":true}}
+{
+    "backgrounds": [
+        {
+            "active": true,
+            "display": {
+                "blur": 0,
+                "luminosity": -0.1
+            },
+            "id": "4db7f65a-a347-4bb8-8ebc-a580590feb55",
+            "key": "background/unsplash"
+        }
+    ],
+    "widgets": [
+        {
+            "active": true,
+            "display": {
+                "position": "middleCentre"
+            },
+            "id": "125e136a-4613-43b9-bf48-39aae546da66",
+            "key": "widget/time"
+        },
+        {
+            "active": true,
+            "display": {
+                "colour": "#feffff",
+                "position": "middleCentre"
+            },
+            "id": "abfe700e-20a8-43a5-b3d6-f186f3049f53",
+            "key": "widget/greeting"
+        },
+        {
+            "active": true,
+            "display": {
+                "fontSize": 32,
+                "position": "middleCentre"
+            },
+            "id": "1b4ccee4-9f8f-4700-b4a0-d38e355d4cbc",
+            "key": "widget/search"
+        },
+        {
+            "active": true,
+            "display": {
+                "position": "middleCentre"
+            },
+            "id": "56f4a10c-f898-4fef-86ab-78caa9b2dd8f",
+            "key": "widget/links"
+        },
+        {
+            "active": true,
+            "display": {
+                "position": "middleCentre"
+            },
+            "id": "d105749a-ef2d-464f-be08-2c6c17539153",
+            "key": "widget/todo"
+        }
+    ],
+    "data": {
+        "1b4ccee4-9f8f-4700-b4a0-d38e355d4cbc": {
+            "searchEngine": "duckduckgo",
+            "suggestionsQuantity": 4
+        },
+        "56f4a10c-f898-4fef-86ab-78caa9b2dd8f": {
+            "columns": 4,
+            "linkOpenStyle": true,
+            "links": [
+                {
+                    "icon": "message-circle",
+                    "name": "Reddit",
+                    "url": "https://reddit.com"
+                },
+                {
+                    "icon": "youtube",
+                    "name": "YouTube",
+                    "url": "https://youtube.com"
+                },
+                {
+                    "icon": "terminal",
+                    "name": "asciinema",
+                    "url": "https://asciinema.org/"
+                },
+                {
+                    "icon": "book-open",
+                    "name": "MDN Web Docs",
+                    "url": "https://developer.mozilla.org/en-US/"
+                },
+                {
+                    "icon": "codepen",
+                    "name": "CodePen",
+                    "url": "https://codepen.io"
+                },
+                {
+                    "url": "https://css-tricks.com/",
+                    "name": "CSS Tricks",
+                    "icon": "zap"
+                },
+                {
+                    "url": "https://blog.webdevsimplified.com/",
+                    "icon": "code",
+                    "name": "{ WDS }"
+                },
+                {
+                    "url": "https://www.rubyguides.com/ruby-post-index/",
+                    "name": "Ruby Guides",
+                    "icon": "book"
+                }
+            ],
+            "visible": true
+        },
+        "849876b6-03fa-4584-900a-3609f0cc61e4": {
+            "showDetails": true,
+            "units": "si"
+        },
+        "abfe700e-20a8-43a5-b3d6-f186f3049f53": {
+            "name": "アベルさん"
+        },
+        "d105749a-ef2d-464f-be08-2c6c17539153": {
+            "items": [],
+            "show": 3
+        }
+    },
+    "_persist": {
+        "version": -1,
+        "rehydrated": true
+    }
+}
