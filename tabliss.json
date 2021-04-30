@@ -61,7 +61,7 @@
         },
         "56f4a10c-f898-4fef-86ab-78caa9b2dd8f": {
             "columns": 4,
-            "linkOpenStyle": true,
+            "linkOpenStyle": false,
             "links": [
                 {
                     "icon": "message-circle",
