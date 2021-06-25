@@ -1,19 +1,23 @@
 {
-    "backgrounds": [
+    "backgrounds":
+    [
         {
+            "id": "24df4fe8-deb9-41dc-92c8-f8996f8e21f9",
+            "key": "background/unsplash",
             "active": true,
-            "display": {
-                "blur": 0,
-                "luminosity": -0.1
-            },
-            "id": "4db7f65a-a347-4bb8-8ebc-a580590feb55",
-            "key": "background/unsplash"
+            "display":
+            {
+                "luminosity": 0,
+                "blur": 0
+            }
         }
     ],
-    "widgets": [
+    "widgets":
+    [
         {
             "active": true,
-            "display": {
+            "display":
+            {
                 "position": "middleCentre"
             },
             "id": "125e136a-4613-43b9-bf48-39aae546da66",
@@ -21,7 +25,8 @@
         },
         {
             "active": true,
-            "display": {
+            "display":
+            {
                 "colour": "#feffff",
                 "position": "middleCentre"
             },
@@ -30,7 +35,8 @@
         },
         {
             "active": true,
-            "display": {
+            "display":
+            {
                 "fontSize": 32,
                 "position": "middleCentre"
             },
@@ -39,7 +45,8 @@
         },
         {
             "active": true,
-            "display": {
+            "display":
+            {
                 "position": "middleCentre"
             },
             "id": "56f4a10c-f898-4fef-86ab-78caa9b2dd8f",
@@ -47,22 +54,27 @@
         },
         {
             "active": true,
-            "display": {
+            "display":
+            {
                 "position": "middleCentre"
             },
             "id": "d105749a-ef2d-464f-be08-2c6c17539153",
             "key": "widget/todo"
         }
     ],
-    "data": {
-        "1b4ccee4-9f8f-4700-b4a0-d38e355d4cbc": {
+    "data":
+    {
+        "1b4ccee4-9f8f-4700-b4a0-d38e355d4cbc":
+        {
             "searchEngine": "duckduckgo",
             "suggestionsQuantity": 4
         },
-        "56f4a10c-f898-4fef-86ab-78caa9b2dd8f": {
+        "56f4a10c-f898-4fef-86ab-78caa9b2dd8f":
+        {
             "columns": 4,
             "linkOpenStyle": false,
-            "links": [
+            "links":
+            [
                 {
                     "icon": "message-circle",
                     "name": "Reddit",
@@ -102,23 +114,111 @@
                     "url": "https://www.rubyguides.com/ruby-post-index/",
                     "name": "Ruby Guides",
                     "icon": "book"
+                },
+                {
+                    "url": "https://dotfiles.github.io",
+                    "name": "Dotfiles Github",
+                    "icon": "file"
+                },
+                {
+                    "url": "https://9to5mac.com",
+                    "name": "9to5Mac",
+                    "icon": "monitor"
+                },
+                {
+                    "url": "https://osxdaily.com",
+                    "name": "OSXDaily",
+                    "icon": "battery"
+                },
+                {
+                    "url": "https://blog.acolyer.org/",
+                    "name": "The Morning Paper",
+                    "icon": "paperclip"
+                },
+                {
+                    "url": "https://javatpoint.com",
+                    "name": "JavaTpoint",
+                    "icon": "coffee"
+                },
+                {
+                    "url": "https://python-course.eu",
+                    "name": "Python Course",
+                    "icon": "pen-tool"
+                },
+                {
+                    "url": "https://dmitripavlutin.com",
+                    "name": "Dmitri Pavlutin's Blog",
+                    "icon": "bookmark"
+                },
+                {
+                    "url": "https://www.pythontutorial.net",
+                    "name": "Python Tutorial",
+                    "icon": "package"
+                },
+                {
+                    "url": "https://python-course.eu",
+                    "name": "Python Course",
+                    "icon": "arrow-right-circle"
+                },
+                {
+                    "url": "https://www.honeybadger.io/blog",
+                    "name": "Honeybadger Blog",
+                    "icon": "activity"
+                },
+                {
+                    "url": "https://programming.guide",
+                    "name": "programming[guide]",
+                    "icon": "anchor"
+                },
+                {
+                    "url": "https://explained.ai",
+                    "icon": "eye",
+                    "name": "explained.ai"
+                },
+                {
+                    "url": "https://karpathy.github.io",
+                    "name": "Karpathy's Blog",
+                    "icon": "tablet"
+                },
+                {
+                    "url": "https://inference.vc",
+                    "icon": "maximize",
+                    "name": "inference.vc"
+                },
+                {
+                    "url": "https://news.ycombinator.com",
+                    "name": "Hacker News",
+                    "icon": "navigation"
                 }
             ],
             "visible": true
         },
-        "849876b6-03fa-4584-900a-3609f0cc61e4": {
+        "849876b6-03fa-4584-900a-3609f0cc61e4":
+        {
             "showDetails": true,
             "units": "si"
         },
-        "abfe700e-20a8-43a5-b3d6-f186f3049f53": {
+        "abfe700e-20a8-43a5-b3d6-f186f3049f53":
+        {
             "name": "アベルさん"
         },
-        "d105749a-ef2d-464f-be08-2c6c17539153": {
-            "items": [],
+        "d105749a-ef2d-464f-be08-2c6c17539153":
+        {
+            "items":
+            [],
             "show": 3
+        },
+        "4db7f65a-a347-4bb8-8ebc-a580590feb55":
+        {
+            "by": "official",
+            "collections": "",
+            "featured": false,
+            "search": "",
+            "timeout": 900
         }
     },
-    "_persist": {
+    "_persist":
+    {
         "version": -1,
         "rehydrated": true
     }

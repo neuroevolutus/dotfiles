@@ -26,7 +26,7 @@ path = [
 ]
 prompt = '__zoxide_hook; echo (starship prompt)'
 rm_always_trash = "true"
-startup = ["zoxide init nushell --hook prompt | save ~/.zoxide.nu", "source ~/.zoxide.nu", "alias ll = exa -laFh", "alias ls = exa -laFh", "alias rm = trash", "alias cd = z"]
+startup = ["zoxide init nushell --hook prompt | save ~/.zoxide.nu", "source ~/.zoxide.nu", "alias ll = exa -laFh", "alias ls = exa -laFh", "alias rm = trash"]
 
 [env]
 Apple_PubSub_Socket_Render = "/private/tmp/com.apple.launchd.zVE2fX6OAG/Render"
