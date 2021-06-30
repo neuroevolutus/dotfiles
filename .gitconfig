@@ -2,17 +2,11 @@
     name = Abel Sen
     email = 19356702+neuroevolutus@users.noreply.github.com
 [core]
-    editor = codium --wait
+	editor = subl -n -w
     filemode = false
 	quotepath = off
-[diff]
-	tool = vscodium
-[difftool "vscodium"]
-	cmd = codium --wait --diff $LOCAL $REMOTE
 [merge]
-	tool = vscodium
-[mergetool "vscodium"]
-	cmd = codium --wait $MERGED
+	tool = smerge
 [alias]
     cm = commit
     co = checkout
@@ -22,4 +16,9 @@
     rv = revert
     st = status
 [credential]
-    helper = cache --timeout=900
+	helper = osxkeychain
+[init]
+	defaultBranch = main
+[mergetool "smerge"]
+	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	trustExitCode = true
