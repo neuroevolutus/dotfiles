@@ -1,0 +1,367 @@
+* Emacs
+** Straight.el package manager set-up
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  ;; Use the straight.el package manager
+  (defvar bootstrap-version)
+  (let ((bootstrap-file
+	 (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+	(bootstrap-version 5))
+    (unless (file-exists-p bootstrap-file)
+      (with-current-buffer
+	  (url-retrieve-synchronously
+	   "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+	   'silent 'inhibit-cookies)
+	(goto-char (point-max))
+	(eval-print-last-sexp)))
+    (load bootstrap-file nil 'nomessage))
+
+  ;; Use straight.el for use-package expressions
+  (straight-use-package 'use-package)
+
+  (setq straight-use-package-by-default t)
+#+END_SRC
+** Basic visual customizations
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (scroll-bar-mode -1)			; Disable visible scrollbar
+  (tool-bar-mode -1)			; Disable the toolbar
+  (tooltip-mode -1)			; Disable tooltips
+  (set-fringe-mode 10)			; Give some breathing room
+  (menu-bar-mode -1)			; Disable the menu bar
+  (setq visible-bell t)			; Set up the visible bell
+  (global-set-key [remap just-one-space] ; Make M-SPC alternate between deleting one
+		      'cycle-spacing)	; space, all spaces, or undoing the changes
+  (add-to-list 'default-frame-alist '(fullscreen . maximized)) ; Start in fullscreen
+  (use-package perfect-margin) ; To center buffers
+  (perfect-margin-mode t)
+  (setq perfect-margin-visible-width 128)
+#+END_SRC
+** Basic quality-of-life changes
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (global-set-key [remap list-buffers] 'counsel-switch-buffer) ; Make C-x C-b launch counsel-switch-buffer
+  (global-set-key [remap find-file] 'counsel-find-file) ; Make C-x C-f launch counsel-find-file
+  ; (global-set-key (kbd "M-o") 'other-window) ; Making switching windows easier
+  (windmove-default-keybindings) ; Make it possible to switch windows by using <shift> + <arrow key>
+  (setq inhibit-startup-message t)
+  (use-package helpful)
+  (global-set-key [remap dabbrev-expand] 'hippie-expand) ;; From Mastering Emacs
+  (setq make-backup-files nil)
+#+END_SRC
+** Counsel set-up
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (use-package counsel :diminish)
+
+  (use-package counsel-fd)
+  (use-package counsel-web)
+  (use-package counsel-projectile)
+
+  (use-package counsel-at-point
+    :commands (counsel-at-point-file-jump
+	       counsel-at-point-git-grep
+	       counsel-at-point-imenu))
+
+  (global-set-key (kbd "M-n") 'counsel-at-point-git-grep)
+  (global-set-key (kbd "M-o") 'counsel-at-point-imenu)
+  (global-set-key (kbd "M-p") 'counsel-at-point-file-jump)
+
+  ;; Note that the built-in `describe-function' includes both functions
+  ;; and macros. `helpful-function' is functions only, so we provide
+  ;; `helpful-callable' as a drop-in replacement.
+  (global-set-key (kbd "C-h f") #'helpful-callable)
+
+  (global-set-key (kbd "C-h v") #'helpful-variable)
+  (global-set-key (kbd "C-h k") #'helpful-key)
+
+  ;; Lookup the current symbol at point. C-c C-d is a common keybinding
+  ;; for this in lisp modes.
+  (global-set-key (kbd "C-c C-d") #'helpful-at-point)
+
+  ;; Look up *F*unctions (excludes macros).
+  ;;
+  ;; By default, C-h F is bound to `Info-goto-emacs-command-node'. Helpful
+  ;; already links to the manual, if a function is referenced there.
+  (global-set-key (kbd "C-h F") #'helpful-function)
+
+  ;; Look up *C*ommands.
+  ;;
+  ;; By default, C-h C is bound to describe `describe-coding-system'. I
+  ;; don't find this very useful, but it's frequently useful to only
+  ;; look at interactive functions.
+  (global-set-key (kbd "C-h C") #'helpful-command)
+
+  (setq counsel-describe-function-function #'helpful-callable)
+  (setq counsel-describe-variable-function #'helpful-variable)
+
+  (counsel-mode 1)
+#+END_SRC
+** Org Mode
+*** Initial setup
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  ;; Org
+  (use-package org
+    :config
+    (setq org-ellipsis " ▾"
+	  org-hide-emphasis-markers t)
+    (use-package org-roam
+      :init
+      (setq org-roam-v2-ack t)
+      :custom
+      (org-roam-directory "/Users/abelsen/Dropbox/My Mac/Documents/OrgRoamNotes")
+      :bind (("C-c n l" . org-roam-buffer-toggle)
+	     ("C-c n f" . org-roam-node-find)
+	     ("C-c n i" . org-roam-node-insert)
+	     :map org-mode-map
+	     ("C-M-i" . completion-at-point))
+      :config
+      (org-roam-setup)))
+#+END_SRC
+*** Org Roam
+*** Org Babel
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((dot . t))) ; this line activates dot
+#+END_SRC
+** Programming
+*** Git
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (use-package git-gutter
+    :config
+    (global-git-gutter-mode +1))
+#+END_SRC
+*** Debugging
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp: yes
+  (use-package realgud)
+#+END_SRC
+*** LSP
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  ;; For IDE-like features
+  (use-package lsp-mode
+    :commands lsp
+    :hook
+    (sh-mode . lsp))
+  (use-package lsp-ivy)
+  (use-package lsp-ui)
+  (use-package lsp-docker)
+  (use-package lsp-java
+    :config
+    (add-hook 'java-mode-hook 'lsp))
+  (use-package lsp-haskell)
+  (use-package lsp-scheme)
+  (use-package lsp-treemacs)
+#+END_SRC
+*** DAP
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (use-package dap-mode
+    :after lsp-mode
+    :config (dap-auto-configure-mode))
+#+END_SRC
+*** Documentation
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (straight-use-package 'devdocs)
+  (global-set-key (kbd "C-h D") 'devdocs-lookup)
+#+END_SRC
+*** Languages 
+**** Agda
+**** Bash
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (setq sh-basic-offset 2
+	sh-indentation  2 ; This variable is now obsolete
+	)
+  ; To tell Emacs to recognize a buffer as Bash, put the below at the top of the file
+  ; -*- mode: sh; sh-shell: bash; -*-
+#+END_SRC
+**** Coq
+#+begin_src emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (use-package proof-general)
+  (use-package company-coq)
+  ;; Load company-coq when opening Coq files
+  (add-hook 'coq-mode-hook #'company-coq-mode)
+#+end_src
+**** F#
+**** Haskell
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (use-package haskell-snippets)
+  (use-package haskell-mode
+    :init
+    ;; Hooks so haskell and literate haskell major modes trigger LSP setup
+    (add-hook 'haskell-mode-hook #'lsp)
+    (add-hook 'haskell-literate-mode-hook #'lsp))
+
+  (define-key haskell-mode-map (kbd "<f8>") 'haskell-navigate-imports)
+					  ; Company integration for Haskell
+  (add-hook 'haskell-mode-hook
+	    (lambda ()
+	      (set (make-local-variable 'company-backends)
+		   (append '((company-capf company-dabbrev-code))
+			   company-backends))))
+  (add-hook 'haskell-mode-hook 'haskell-auto-insert-module-template)
+					  ; Haskell compilation
+  (eval-after-load "haskell-mode"
+    '(define-key haskell-mode-map (kbd "C-c C-c") 'haskell-compile))
+  (eval-after-load "haskell-cabal"
+    '(define-key haskell-cabal-mode-map (kbd "C-c C-c") 'haskell-compile))
+  (setq haskell-compile-cabal-build-command "stack build")
+					  ; Interactive Haskell
+  (require 'haskell-interactive-mode)
+  (require 'haskell-process)
+  (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+					  ; Haskell-mode bindings
+  (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-or-reload)
+  (define-key haskell-mode-map (kbd "C-`") 'haskell-interactive-bring)
+  (define-key haskell-mode-map (kbd "C-c C-t") 'haskell-process-do-type)
+  (define-key haskell-mode-map (kbd "C-c C-i") 'haskell-process-do-info)
+  (define-key haskell-mode-map (kbd "C-c C-c") 'haskell-process-cabal-build)
+  (define-key haskell-mode-map (kbd "C-c C-k") 'haskell-interactive-mode-clear)
+  (define-key haskell-mode-map (kbd "C-c c") 'haskell-process-cabal)
+					  ; Cabal-mode bindings
+  (define-key haskell-cabal-mode-map (kbd "C-`") 'haskell-interactive-bring)
+  (define-key haskell-cabal-mode-map (kbd "C-c C-k") 'haskell-interactive-mode-clear)
+  (define-key haskell-cabal-mode-map (kbd "C-c C-c") 'haskell-process-cabal-build)
+  (define-key haskell-cabal-mode-map (kbd "C-c c") 'haskell-process-cabal)
+#+END_SRC
+**** Rust
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (straight-use-package 'cargo) ; Rust configuration
+  (straight-use-package 'rustic)
+#+END_SRC
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  ;; (set-face-attribute 'fixed-pitch nil :font "Fira Code Retina" :height 260)
+  ;; (set-face-attribute 'variable-pitch nil :font "Cantarell" :height 295 :weight 'regular)
+
+  ;; For disabling warnings on MacOS
+  ;; when opening directories with
+  ;; Emacs
+  ;; Taken from: https://stackoverflow.com/questions/25125200/emacs-error-ls-does-not-support-dired
+  (when (string= system-type "darwin")
+    (setq dired-use-ls-dired nil)
+    (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font Mono" :height 180))
+
+  (use-package command-log-mode)
+
+  ;; Use nord-theme
+  (use-package nord-theme
+    :straight t
+    :init (load-theme 'nord t))
+
+  ;; A better dired
+  (use-package dirvish
+    :init
+    (dirvish-override-dired-mode))
+
+  (use-package all-the-icons)
+
+  ;; For Japanese study
+  (use-package weblio)
+#+END_SRC
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  ;; Use deadgrep to quickly search the contents of files
+  (straight-use-package 'deadgrep)
+
+  ;; Magit
+  (use-package magit
+    :straight t)
+
+  ;; For reading EPUB files
+  (use-package nov
+    :straight t
+    :config
+    (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))
+
+  ;; Add "hybrid" numbers
+  ;; I.e., the line corresponding to point
+  ;; will show the absolute line number while
+  ;; the rest will show relative line numbers
+  (column-number-mode)
+  (setq display-line-numbers-type 'relative)
+  (global-display-line-numbers-mode t)
+
+  ;; Customize modeline
+  (use-package telephone-line
+    :init (telephone-line-mode 1))
+
+  ;; Disable line numbers for some modes
+  (dolist (mode '(eshell-mode-hook
+		  org-mode-hook
+		  shell-mode-hook
+		  term-mode-hook))
+    (add-hook mode (lambda () (display-line-numbers-mode 0))))
+
+  (use-package rainbow-delimiters
+    :hook (prog-mode . rainbow-delimiters-mode))
+
+  (use-package which-key
+    :init (which-key-mode)
+    :diminish which-key-mode
+    :config
+    (setq which-key-idle-delay 1))
+
+  (use-package ivy
+    :init
+    (setq ivy-use-virtual-buffers t)
+    (setq enable-recursive-minibuffers t)
+    :config
+    (use-package ivy-rich
+      :init
+      (ivy-rich-mode 1))
+    (use-package swiper))
+
+  (use-package markdown-mode
+    :config (use-package markdown-toc))
+
+  (use-package purescript-mode)
+
+  (use-package company ; In-buffer completion
+    :config
+    ;; Trigger completion on Shift-Space
+    (global-set-key (kbd "S-SPC") #'company-complete))
+  (use-package yasnippet
+    :config
+    (yas-global-mode 1))
+
+  (global-company-mode 1)
+  (setq company-idle-delay 0)
+
+  (use-package nix-mode ; Nix configuration
+    :config
+    (use-package nix-buffer)
+    (use-package nix-sandbox)
+    (use-package nix-env-install)
+    (use-package nix-haskell-mode)
+    (use-package nix-modeline)
+    (use-package nix-update)
+    (use-package nixpkgs-fmt))
+
+  (use-package proof-general)
+					  ; Lean configuration
+  (straight-use-package 'lean-mode)
+
+  (use-package beacon
+    :config (beacon-mode 1)); To keep track of cursor position
+
+  (straight-use-package 'kurecolor)
+
+  (straight-use-package 'ebuku)
+
+  (straight-use-package 'format-all)
+
+  (use-package flycheck
+    :config
+    (add-hook 'sh-mode-hook 'flycheck-mode)
+    (use-package flycheck-mercury)
+    (use-package flycheck-rust))
+
+  (straight-use-package 'fancy-dabbrev)
+
+  (straight-use-package 'yaml-mode)
+#+END_SRC
+**** Scala
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (straight-use-package 'scala-mode)
+  (straight-use-package 'lsp-metals)
+#+END_SRC
+*** Protobuf
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (straight-use-package 'protobuf-mode)
+#+END_SRC
+** Languages
+*** Japanese
