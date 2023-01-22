@@ -31,10 +31,12 @@
   (global-set-key [remap just-one-space] ; Make M-SPC alternate between deleting one
 		      'cycle-spacing)	; space, all spaces, or undoing the changes
   (add-to-list 'default-frame-alist '(fullscreen . maximized)) ; Start in fullscreen
-  (use-package perfect-margin) ; To center buffers
+  (use-package perfect-margin
+    :straight t) ; To center buffers
   (perfect-margin-mode t)
   (setq perfect-margin-visible-width 128)
-  (use-package recursion-indicator)
+  (use-package recursion-indicator
+    :straight t)
 #+END_SRC
 ** Basic quality-of-life changes
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
@@ -43,21 +45,30 @@
   ; (global-set-key (kbd "M-o") 'other-window) ; Making switching windows easier
   (windmove-default-keybindings) ; Make it possible to switch windows by using <shift> + <arrow key>
   (setq inhibit-startup-message t)
-  (use-package helpful)
+  (use-package helpful
+    :straight t)
   (global-set-key [remap dabbrev-expand] 'hippie-expand) ;; From Mastering Emacs
   (setq make-backup-files nil)
-  (use-package treemacs)
-  (use-package projectile)
+  (use-package treemacs
+    :straight t)
+  (use-package projectile
+    :straight t)
 #+END_SRC
 ** Counsel set-up
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
-  (use-package counsel :diminish)
+  (use-package counsel
+    :straight t
+    :diminish)
 
-  (use-package counsel-fd)
-  (use-package counsel-web)
-  (use-package counsel-projectile)
+  (use-package counsel-fd
+    :straight t)
+  (use-package counsel-web
+    :straight t)
+  (use-package counsel-projectile
+    :straight t)
 
   (use-package counsel-at-point
+    :straight t
     :commands (counsel-at-point-file-jump
 	       counsel-at-point-git-grep
 	       counsel-at-point-imenu))
@@ -101,6 +112,7 @@
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   ;; Org
   (use-package org
+    :straight t
     :config
     (setq org-ellipsis " ▾"
 	  org-hide-emphasis-markers t)
@@ -128,31 +140,39 @@
 *** Git
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (use-package git-gutter
+    :straight t
     :config
     (global-git-gutter-mode +1))
 #+END_SRC
 *** Debugging
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp: yes
-  (use-package realgud)
+  (use-package realgud
+    :straight t)
 #+END_SRC
 *** LSP
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   ;; For IDE-like features
   (use-package lsp-mode
+    :straight t
     :commands lsp
     :hook
     (sh-mode . lsp))
-  (use-package lsp-ivy)
-  (use-package lsp-ui)
+  (use-package lsp-ivy
+    :straight t)
+  (use-package lsp-ui
+    :straight t)
   (use-package lsp-java
     :config
     (add-hook 'java-mode-hook 'lsp))
-  (use-package lsp-haskell)
-  (use-package lsp-scheme)
+  (use-package lsp-haskell
+    :straight t)
+  (use-package lsp-scheme
+    :straight t)
 #+END_SRC
 *** DAP
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (use-package dap-mode
+    :straight t
     :after lsp-mode
     :config (dap-auto-configure-mode))
 #+END_SRC
@@ -173,16 +193,20 @@
 #+END_SRC
 **** Coq
 #+begin_src emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
-  (use-package proof-general)
-  (use-package company-coq)
+  (use-package proof-general
+    :straight t)
+  (use-package company-coq
+    :straight t)
   ;; Load company-coq when opening Coq files
   (add-hook 'coq-mode-hook #'company-coq-mode)
 #+end_src
 **** F#
 **** Haskell
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
-  (use-package haskell-snippets)
+  (use-package haskell-snippets
+    :straight t)
   (use-package haskell-mode
+    :straight t
     :init
     ;; Hooks so haskell and literate haskell major modes trigger LSP setup
     (add-hook 'haskell-mode-hook #'lsp)
@@ -237,7 +261,8 @@
     (setq dired-use-ls-dired nil)
     (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font Mono" :height 180))
 
-  (use-package command-log-mode)
+  (use-package command-log-mode
+    :straight t)
 
   ;; Use nord-theme
   (use-package nord-theme
@@ -246,13 +271,16 @@
 
   ;; A better dired
   (use-package dirvish
+    :straight t
     :init
     (dirvish-override-dired-mode))
 
-  (use-package all-the-icons)
+  (use-package all-the-icons
+    :straight t)
 
   ;; For Japanese study
-  (use-package weblio)
+  (use-package weblio
+    :straight t)
 #+END_SRC
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   ;; Use deadgrep to quickly search the contents of files
@@ -278,6 +306,7 @@
 
   ;; Customize modeline
   (use-package telephone-line
+    :straight t
     :init (telephone-line-mode 1))
 
   ;; Disable line numbers for some modes
@@ -288,34 +317,43 @@
     (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
   (use-package rainbow-delimiters
+    :straight t
     :hook (prog-mode . rainbow-delimiters-mode))
 
   (use-package which-key
+    :straight t
     :init (which-key-mode)
     :diminish which-key-mode
     :config
     (setq which-key-idle-delay 1))
 
   (use-package ivy
+    :straight t
     :init
     (setq ivy-use-virtual-buffers t)
     (setq enable-recursive-minibuffers t)
     :config
     (use-package ivy-rich
+      :straight t
       :init
       (ivy-rich-mode 1))
-    (use-package swiper))
+    (use-package swiper
+      :straight t))
 
   (use-package markdown-mode
+    :straight t
     :config (use-package markdown-toc))
 
-  (use-package purescript-mode)
+  (use-package purescript-mode
+    :straight t)
 
   (use-package company ; In-buffer completion
+    :straight t
     :config
     ;; Trigger completion on Shift-Space
     (global-set-key (kbd "S-SPC") #'company-complete))
   (use-package yasnippet
+    :straight t
     :config
     (yas-global-mode 1))
 
@@ -323,20 +361,30 @@
   (setq company-idle-delay 0)
 
   (use-package nix-mode ; Nix configuration
+    :straight t
     :config
-    (use-package nix-buffer)
-    (use-package nix-sandbox)
-    (use-package nix-env-install)
-    (use-package nix-haskell-mode)
-    (use-package nix-modeline)
-    (use-package nix-update)
-    (use-package nixpkgs-fmt))
+    (use-package nix-buffer
+      :straight t)
+    (use-package nix-sandbox
+      :straight t)
+    (use-package nix-env-install
+      :straight t)
+    (use-package nix-haskell-mode
+      :straight t)
+    (use-package nix-modeline
+      :straight t)
+    (use-package nix-update
+      :straight t)
+    (use-package nixpkgs-fmt
+      :straight t))
 
-  (use-package proof-general)
+  (use-package proof-general
+    :straight t)
 					  ; Lean configuration
   (straight-use-package 'lean-mode)
 
   (use-package beacon
+    :straight t
     :config (beacon-mode 1)); To keep track of cursor position
 
   (straight-use-package 'kurecolor)
@@ -346,6 +394,7 @@
   (straight-use-package 'format-all)
 
   (use-package flycheck
+    :straight t
     :config
     (add-hook 'sh-mode-hook 'flycheck-mode)
     (use-package flycheck-mercury)
@@ -366,12 +415,18 @@
 #+END_SRC
 *** DevOps
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
-  (use-package lsp-docker)
-  (use-package dockerfile-mode)
-  (use-package docker-compose-mode)
-  (use-package kele)
-  (use-package kubernetes)
-  (use-package terraform-mode)
+  (use-package lsp-docker
+    :straight t)
+  (use-package dockerfile-mode
+    :straight t)
+  (use-package docker-compose-mode
+    :straight t)
+  (use-package kele
+    :straight t)
+  (use-package kubernetes
+    :straight t)
+  (use-package terraform-mode
+    :straight t)
 #+END_SRC
 ** Shell Set-Up
 *** Bash
