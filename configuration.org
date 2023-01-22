@@ -412,6 +412,8 @@
     . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
   fi
   # End Nix
+
+  source $HOME/.bashrc
 #+END_SRC
 **** .bashrc
 #+BEGIN_SRC bash :tangle ~/.bashrc :mkdirp yes
