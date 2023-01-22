@@ -364,6 +364,15 @@
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (straight-use-package 'protobuf-mode)
 #+END_SRC
+*** DevOps
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (use-package lsp-docker)
+  (use-package dockerfile-mode)
+  (use-package docker-compose-mode)
+  (use-package kele)
+  (use-package kubernetes)
+  (use-package terraform-mode)
+#+END_SRC
 ** Shell Set-Up
 *** Bash
 **** .bash_profile
