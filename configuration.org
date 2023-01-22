@@ -149,7 +149,6 @@
     (add-hook 'java-mode-hook 'lsp))
   (use-package lsp-haskell)
   (use-package lsp-scheme)
-  (use-package lsp-treemacs)
 #+END_SRC
 *** DAP
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
