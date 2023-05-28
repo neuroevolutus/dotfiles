@@ -191,6 +191,13 @@
   ; To tell Emacs to recognize a buffer as Bash, put the below at the top of the file
   ; -*- mode: sh; sh-shell: bash; -*-
 #+END_SRC
+**** C
+#+begin_src emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (use-package cmake-mode
+    :straight t)
+  (use-package cmake-font-lock
+    :straight t)
+#+end_src
 **** Coq
 #+begin_src emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (use-package proof-general
