@@ -353,6 +353,7 @@
 
   (use-package markdown-mode
     :straight t
+    :init (setq markdown-command "multimarkdown")
     :config (use-package markdown-toc))
 
   (use-package purescript-mode
