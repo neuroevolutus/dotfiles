@@ -270,7 +270,7 @@
   ;; Taken from: https://stackoverflow.com/questions/25125200/emacs-error-ls-does-not-support-dired
   (when (string= system-type "darwin")
     (setq dired-use-ls-dired nil)
-    (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font Mono" :height 180))
+    (set-face-attribute 'default nil :font "Iosevka NFM" :height 180))
 
   (use-package command-log-mode
     :straight t)
