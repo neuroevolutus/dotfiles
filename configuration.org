@@ -440,9 +440,12 @@
   (use-package terraform-mode
     :straight t)
 #+END_SRC
-** Shell Set-Up
-*** Bash
-**** .bash_profile
+** Languages
+*** Japanese
+* Shell
+** Bash
+*** Scripts
+*** .bash_profile
 #+BEGIN_SRC bash :tangle ~/.bash_profile :mkdirp yes
   export PATH=$HOME/.cargo/bin:$PATH
   export PATH=/Library/Apple/usr/bin:$PATH
@@ -628,5 +631,3 @@
   # Starship Configuration
   eval "$(starship init bash)"
 #+END_SRC
-** Languages
-*** Japanese
