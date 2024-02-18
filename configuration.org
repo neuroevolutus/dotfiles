@@ -492,7 +492,7 @@
 
   source $HOME/.bashrc
 #+END_SRC
-**** .bashrc
+*** .bashrc
 #+BEGIN_SRC bash :tangle ~/.bashrc :mkdirp yes
   # Enable the subsequent settings only in interactive sessions
   case $- in
