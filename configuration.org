@@ -155,6 +155,10 @@
   (use-package lsp-mode
     :straight t
     :commands lsp
+    :init
+    (setq lsp-clangd-binary-path "/opt/homebrew/opt/llvm/bin/clangd")
+    (setq lsp-clients-clangd-executable "/opt/homebrew/opt/llvm/bin/clangd")
+    (setq lsp-clients-clangd-library-directories '("/opt/homebrew/opt/llvm/include/c++/v1"))
     :hook
     (sh-mode . lsp))
   (use-package lsp-ivy
