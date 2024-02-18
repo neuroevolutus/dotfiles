@@ -1,5 +1,6 @@
-* Emacs
-** Straight.el package manager set-up
+* Configuration
+** Emacs
+*** Straight.el package manager set-up
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   ;; Use the straight.el package manager
   (defvar bootstrap-version)
@@ -20,7 +21,7 @@
 
   (setq straight-use-package-by-default t)
 #+END_SRC
-** Basic visual customizations
+*** Basic visual customizations
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (scroll-bar-mode -1)			; Disable visible scrollbar
   (tool-bar-mode -1)			; Disable the toolbar
@@ -38,7 +39,7 @@
   (use-package recursion-indicator
     :straight t)
 #+END_SRC
-** Basic quality-of-life changes
+*** Basic quality-of-life changes
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (global-set-key [remap list-buffers] 'counsel-switch-buffer) ; Make C-x C-b launch counsel-switch-buffer
   (global-set-key [remap find-file] 'counsel-find-file) ; Make C-x C-f launch counsel-find-file
@@ -54,7 +55,7 @@
   (use-package projectile
     :straight t)
 #+END_SRC
-** Counsel set-up
+*** Counsel set-up
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (use-package counsel
     :straight t
@@ -107,8 +108,8 @@
 
   (counsel-mode 1)
 #+END_SRC
-** Org Mode
-*** Initial setup
+*** Org Mode
+**** Initial setup
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   ;; Org
   (use-package org
@@ -129,27 +130,27 @@
       :config
       (org-roam-setup)))
 #+END_SRC
-*** Org Roam
-*** Org Babel
+**** Org Roam
+**** Org Babel
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((dot . t))) ; this line activates dot
 #+END_SRC
-** Programming
-*** Git
+*** Programming
+**** Git
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (use-package git-gutter
     :straight t
     :config
     (global-git-gutter-mode +1))
 #+END_SRC
-*** Debugging
+**** Debugging
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp: yes
   (use-package realgud
     :straight t)
 #+END_SRC
-*** LSP
+**** LSP
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   ;; For IDE-like features
   (use-package lsp-mode
@@ -173,21 +174,21 @@
   (use-package lsp-scheme
     :straight t)
 #+END_SRC
-*** DAP
+**** DAP
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (use-package dap-mode
     :straight t
     :after lsp-mode
     :config (dap-auto-configure-mode))
 #+END_SRC
-*** Documentation
+**** Documentation
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (straight-use-package 'devdocs)
   (global-set-key (kbd "C-h D") 'devdocs-lookup)
 #+END_SRC
-*** Languages 
-**** Agda
-**** Bash
+**** Languages 
+***** Agda
+***** Bash
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (setq sh-basic-offset 2
 	sh-indentation  2 ; This variable is now obsolete
@@ -195,14 +196,14 @@
   ; To tell Emacs to recognize a buffer as Bash, put the below at the top of the file
   ; -*- mode: sh; sh-shell: bash; -*-
 #+END_SRC
-**** C
+***** C
 #+begin_src emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (use-package cmake-mode
     :straight t)
   (use-package cmake-font-lock
     :straight t)
 #+end_src
-**** Coq
+***** Coq
 #+begin_src emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (use-package proof-general
     :straight t)
@@ -211,8 +212,8 @@
   ;; Load company-coq when opening Coq files
   (add-hook 'coq-mode-hook #'company-coq-mode)
 #+end_src
-**** F#
-**** Haskell
+***** F#
+***** Haskell
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (use-package haskell-snippets
     :straight t)
@@ -255,7 +256,8 @@
   (define-key haskell-cabal-mode-map (kbd "C-c C-c") 'haskell-process-cabal-build)
   (define-key haskell-cabal-mode-map (kbd "C-c c") 'haskell-process-cabal)
 #+END_SRC
-**** Rust
+***** Lisp
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (straight-use-package 'cargo) ; Rust configuration
   (straight-use-package 'rustic)
@@ -416,16 +418,16 @@
 
   (straight-use-package 'yaml-mode)
 #+END_SRC
-**** Scala
+***** Scala
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (straight-use-package 'scala-mode)
   (straight-use-package 'lsp-metals)
 #+END_SRC
-*** Protobuf
+**** Protobuf
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (straight-use-package 'protobuf-mode)
 #+END_SRC
-*** DevOps
+**** DevOps
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (use-package lsp-docker
     :straight t)
@@ -440,8 +442,12 @@
   (use-package terraform-mode
     :straight t)
 #+END_SRC
-** Shell Set-Up
+**** Text Editing
+*** Languages
+**** Japanese
+** Shell
 *** Bash
+**** Scripts
 **** .bash_profile
 #+BEGIN_SRC bash :tangle ~/.bash_profile :mkdirp yes
   export PATH=$HOME/.cargo/bin:$PATH
@@ -492,7 +498,7 @@
 
   source $HOME/.bashrc
 #+END_SRC
-*** .bashrc
+**** .bashrc
 #+BEGIN_SRC bash :tangle ~/.bashrc :mkdirp yes
   # Enable the subsequent settings only in interactive sessions
   case $- in
@@ -628,5 +634,3 @@
   # Starship Configuration
   eval "$(starship init bash)"
 #+END_SRC
-** Languages
-*** Japanese
