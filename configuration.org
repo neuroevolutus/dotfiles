@@ -32,9 +32,6 @@
   (global-set-key [remap just-one-space] ; Make M-SPC alternate between deleting one
 		      'cycle-spacing)	; space, all spaces, or undoing the changes
   (add-to-list 'default-frame-alist '(fullscreen . maximized)) ; Start in fullscreen
-  (use-package perfect-margin
-    :straight t) ; To center buffers
-  (perfect-margin-mode t)
   (setq perfect-margin-visible-width 128)
   (use-package recursion-indicator
     :straight t)
