@@ -38,6 +38,8 @@
 #+END_SRC
 *** Basic quality-of-life changes
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (delete-selection-mode 1)
+  (winner-mode 1)
   (global-set-key [remap list-buffers] 'counsel-switch-buffer) ; Make C-x C-b launch counsel-switch-buffer
   (global-set-key [remap find-file] 'counsel-find-file) ; Make C-x C-f launch counsel-find-file
   ; (global-set-key (kbd "M-o") 'other-window) ; Making switching windows easier
