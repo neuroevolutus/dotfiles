@@ -447,6 +447,12 @@
     :straight t)
 #+END_SRC
 **** Text Editing
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (use-package editorconfig
+    :straight t
+    :config
+    (editorconfig-mode 1))
+#+END_SRC
 *** Languages
 **** Japanese
 ** Shell
