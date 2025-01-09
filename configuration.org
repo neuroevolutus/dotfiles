@@ -35,6 +35,8 @@
   (setq perfect-margin-visible-width 128)
   (use-package recursion-indicator
     :straight t)
+  (use-package spacious-padding
+    :straight t)
 #+END_SRC
 *** Basic quality-of-life changes
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
