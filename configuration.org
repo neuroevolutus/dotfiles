@@ -257,6 +257,11 @@
 #+END_SRC
 ***** Lisp
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (use-package sly
+    :straight t
+    :init
+    (setq inferior-lisp-program "sbcl"))
+#+END_SRC
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (straight-use-package 'cargo) ; Rust configuration
   (straight-use-package 'rustic)
