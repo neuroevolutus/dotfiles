@@ -69,6 +69,8 @@
   ;; keep a list of recently opened files
   (require 'recentf)
   (recentf-mode 1)
+  (setq mark-ring-max 32)
+  (setq global-mark-ring-max 32)
   (setq disabled-command-function nil)
 #+END_SRC
 *** Counsel set-up
