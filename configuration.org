@@ -66,6 +66,9 @@
     :straight t)
   (use-package cl-lib
     :straight t)
+  ;; keep a list of recently opened files
+  (require 'recentf)
+  (recentf-mode 1)
 #+END_SRC
 *** Counsel set-up
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
