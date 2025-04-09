@@ -341,6 +341,7 @@
 #+END_SRC
 *** Languages
 **** Japanese
+*** Miscellaneous
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   ;; (set-face-attribute 'fixed-pitch nil :font "Fira Code Retina" :height 260)
   ;; (set-face-attribute 'variable-pitch nil :font "Cantarell" :height 295 :weight 'regular)
