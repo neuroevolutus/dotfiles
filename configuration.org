@@ -300,6 +300,16 @@
   (straight-use-package 'cargo) ; Rust configuration
   (straight-use-package 'rustic)
 #+END_SRC
+***** Scala
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (straight-use-package 'scala-mode)
+  (straight-use-package 'lsp-metals)
+#+END_SRC
+***** Scheme
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (use-package geiser
+    :straight t)
+#+END_SRC
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   ;; (set-face-attribute 'fixed-pitch nil :font "Fira Code Retina" :height 260)
   ;; (set-face-attribute 'variable-pitch nil :font "Cantarell" :height 295 :weight 'regular)
@@ -455,16 +465,6 @@
   (straight-use-package 'fancy-dabbrev)
 
   (straight-use-package 'yaml-mode)
-#+END_SRC
-***** Scala
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
-  (straight-use-package 'scala-mode)
-  (straight-use-package 'lsp-metals)
-#+END_SRC
-***** Scheme
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
-  (use-package geiser
-    :straight t)
 #+END_SRC
 **** Protobuf
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
