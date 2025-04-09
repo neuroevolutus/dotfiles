@@ -520,6 +520,9 @@
   # OCaml configuration
   export PATH="${HOME}/.opam/default/bin:${HOME}/.opam/default/sbin:${PATH}"
 
+  # Haxe configuration
+  export HAXE_STD_PATH="/opt/homebrew/lib/haxe/std"
+
   # Ensure GHCup is on $PATH
   export PATH=$HOME/.ghcup/bin:$PATH
 
