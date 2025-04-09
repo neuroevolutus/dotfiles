@@ -153,6 +153,32 @@
    '((dot . t))) ; this line activates dot
 #+END_SRC
 *** Programming
+**** Protobuf
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (straight-use-package 'protobuf-mode)
+#+END_SRC
+**** DevOps
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (use-package lsp-docker
+    :straight t)
+  (use-package dockerfile-mode
+    :straight t)
+  (use-package docker-compose-mode
+    :straight t)
+  (use-package kele
+    :straight t)
+  (use-package kubernetes
+    :straight t)
+  (use-package terraform-mode
+    :straight t)
+#+END_SRC
+**** Text Editing
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (use-package editorconfig
+    :straight t
+    :config
+    (editorconfig-mode 1))
+#+END_SRC
 **** Git
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (use-package git-gutter
@@ -465,32 +491,6 @@
   (straight-use-package 'fancy-dabbrev)
 
   (straight-use-package 'yaml-mode)
-#+END_SRC
-**** Protobuf
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
-  (straight-use-package 'protobuf-mode)
-#+END_SRC
-**** DevOps
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
-  (use-package lsp-docker
-    :straight t)
-  (use-package dockerfile-mode
-    :straight t)
-  (use-package docker-compose-mode
-    :straight t)
-  (use-package kele
-    :straight t)
-  (use-package kubernetes
-    :straight t)
-  (use-package terraform-mode
-    :straight t)
-#+END_SRC
-**** Text Editing
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
-  (use-package editorconfig
-    :straight t
-    :config
-    (editorconfig-mode 1))
 #+END_SRC
 *** Languages
 **** Japanese
