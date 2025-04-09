@@ -657,6 +657,682 @@
 
 #+END_SRC
 ** System
+*** Brewfile
+#+begin_src bash :tangle ~/.Brewfile
+  tap "aconchillo/guile"
+  tap "d12frosted/emacs-plus"
+  tap "homebrew/bundle"
+  tap "homebrew/cask-fonts"
+  tap "homebrew/services"
+  tap "jank-lang/jank"
+  # Armed Bear Common Lisp: a full implementation of Common Lisp
+  brew "abcl"
+  # C++ Common Libraries
+  brew "abseil"
+  # Steel Bank Common Lisp system
+  brew "sbcl"
+  # Logic and programming language in which you can model computer systems
+  brew "acl2"
+  # Dependently typed functional programming language
+  brew "agda"
+  # CLI toolkit for working with Akamai's APIs
+  brew "akamai"
+  # Music programming language for musicians
+  brew "alda"
+  # High-performance theorem prover
+  brew "z3"
+  # GNU multiple precision arithmetic library
+  brew "gmp"
+  # GNU compiler collection
+  brew "gcc"
+  # Simple, modern and portable programming language for efficient scripting
+  brew "arturo"
+  # Text processor and publishing toolchain for AsciiDoc
+  brew "asciidoctor"
+  # Code searching, linting, rewriting
+  brew "ast-grep"
+  # Source code beautifier for C, C++, C#, and Java
+  brew "astyle"
+  # Programming language with formal specification features
+  brew "ats2-postiats"
+  # Improved shell history for zsh, bash, fish and nushell
+  brew "atuin"
+  # Text processing scripting language
+  brew "awk"
+  # Integrated shell for working with the AWS CLI
+  brew "aws-shell"
+  # Official Amazon AWS command-line interface
+  brew "awscli"
+  # Bourne-Again SHell, a UNIX command interpreter
+  brew "bash"
+  # Platform built on V8 to build network applications
+  brew "node"
+  # Language Server for Bash
+  brew "bash-language-server"
+  # Bash unit testing enterprise edition framework for professionals
+  brew "bash_unit"
+  # Clone of cat(1) with syntax highlighting and Git integration
+  brew "bat"
+  # Google's own build tool
+  brew "bazel"
+  # Arbitrary precision numeric processing language
+  brew "bc"
+  # Open-source formatting library for C++
+  brew "fmt"
+  # Generate compilation database for clang tooling
+  brew "bear"
+  # Size profiler for binaries
+  brew "bloaty"
+  # Collection of portable C++ source libraries
+  brew "boost"
+  # C++ library for C++/MPI interoperability
+  brew "boost-mpi"
+  # Package manager for the web
+  brew "bower"
+  # Interpreter for the brainfuck language
+  brew "brainfuck"
+  # New way to see and navigate directory trees
+  brew "broot"
+  # Powerful command-line bookmark manager
+  brew "buku"
+  # Compiler for the C3 language
+  brew "c3c"
+  # Brainfuck language toolkit
+  brew "cattle"
+  # Format codeblocks inside markdown and org documents
+  brew "cbfmt"
+  # C/C++/ObjC language server
+  brew "ccls"
+  # Turn English phrases to C or C++ declarations
+  brew "cdecl"
+  # Easy to use embedded scripting language for C++
+  brew "chaiscript"
+  # Cross-platform make
+  brew "cmake", link: false
+  # Package compiler and linker metadata toolkit
+  brew "pkgconf"
+  # Programming language for productive parallel computing at scale
+  brew "chapel"
+  # Checks for bashisms in shell scripts
+  brew "checkbashisms"
+  # Linter/analyzer for Makefiles
+  brew "checkmake"
+  # Check Java source against a coding standard
+  brew "checkstyle"
+  # Implementation of the Chez Scheme language
+  brew "chezscheme"
+  # Small footprint Scheme for use as a C Extension Language
+  brew "chibi-scheme"
+  # Compiler for the Scheme programming language
+  brew "chicken"
+  # Human-friendly and fast alternative to cut and (sometimes) awk
+  brew "choose-rust"
+  # Concurrent, on-the-fly audio programming language
+  brew "chuck"
+  # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
+  brew "clang-format"
+  # Run a SQL like language to perform queries on C/C++ files
+  brew "clangql"
+  # C++ interpreter
+  brew "cling"
+  # Powerful, lightweight programming language
+  brew "lua"
+  # ASP system to ground and solve logic programs
+  brew "clingo"
+  # GNU CLISP, a Common Lisp implementation
+  brew "clisp"
+  # Formatting Clojure code
+  brew "cljfmt"
+  # Dynamic, general-purpose programming language
+  brew "clojure"
+  # Language Server (LSP) for Clojure
+  brew "clojure-lsp"
+  # Language Server for CMake
+  brew "cmake-language-server"
+  # Generate a Clang compilation database for Make-based build systems
+  brew "compiledb"
+  # General purpose programming language in the ML family
+  brew "ocaml"
+  # Object-oriented, actor-model, capabilities-secure programming language
+  brew "ponyc"
+  # Dependency manager for the Pony language
+  brew "corral"
+  # Pure Scala Artifact Fetching
+  brew "coursier"
+  # Static analysis of C and C++ code
+  brew "cppcheck"
+  # See your source code with the eyes of a compiler
+  brew "cppinsights"
+  # Static code checker for C++
+  brew "cpplint"
+  # Domain-specific language for specifying cryptographic algorithms
+  brew "cryptol"
+  # Fast and statically typed, compiled language with Ruby-like syntax
+  brew "crystal"
+  # SQL-like query language for csv
+  brew "csvq"
+  # Programming language for digital color management
+  brew "ctl"
+  # Get a file from an HTTP, HTTPS or FTP server
+  brew "curl"
+  # Compiler for writing C extensions for the Python language
+  brew "cython"
+  # Verification-aware programming language
+  brew "dafny"
+  # POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
+  brew "dash"
+  # Formatter for D source code
+  brew "dfmt"
+  # Interpreter for the Dhall language
+  brew "dhall"
+  # Compile Dhall to Bash
+  brew "dhall-bash"
+  # Dhall to JSON compiler and a Dhall to YAML compiler
+  brew "dhall-json"
+  # Language Server Protocol (LSP) server for Dhall
+  brew "dhall-lsp-server"
+  # Convert between Dhall and Toml
+  brew "dhall-toml"
+  # Convert between Dhall and YAML
+  brew "dhall-yaml"
+  # Good-lookin' diffs with diff-highlight and more
+  brew "diff-so-fancy"
+  # Diff that understands syntax
+  brew "difftastic"
+  # Distributed compiler client and server
+  brew "distcc"
+  # Git for Data
+  brew "dolt"
+  # Dolt for Postgres
+  brew "doltgres"
+  # Generate documentation for several programming languages
+  brew "doxygen"
+  # D programming language tools
+  brew "dtools"
+  # Simple, extendable and embeddable scripting language
+  brew "duckscript"
+  # Composable build system for OCaml
+  brew "dune"
+  # Embeddable Common Lisp
+  brew "ecl"
+  # Tool to verify that your files are in harmony with your .editorconfig
+  brew "editorconfig-checker"
+  # Development environment for the Eiffel language
+  brew "eiffelstudio"
+  # Lean Theorem Prover installer and version manager
+  brew "elan-init"
+  # Programming language for highly scalable real-time systems
+  brew "erlang"
+  # Functional metaprogramming aware language built on Erlang VM
+  brew "elixir"
+  # Erlang Style Reviewer
+  brew "elvis"
+  # Emacs plugin using libclang to complete C/C++ code
+  brew "emacs-clang-complete-async"
+  # Small epoll implementation using kqueue
+  brew "epoll-shim"
+  # Theorem prover for full first-order logic with equality
+  brew "eprover"
+  # Statically typed language that can deeply improve the Python ecosystem
+  brew "erg"
+  # Extremely fast JavaScript bundler and minifier
+  brew "esbuild"
+  # Calculator REPL, similar to bc(1)
+  brew "eva"
+  # Command-line tool to interact with exercism.io
+  brew "exercism"
+  # Extra modules and scripts for CMake
+  brew "extra-cmake-modules"
+  # Modern, maintained replacement for ls
+  brew "eza"
+  # Functional programming language for real time signal processing
+  brew "faust"
+  # Simple, fast and user-friendly alternative to find
+  brew "fd"
+  # Lua Lisp Language
+  brew "fennel"
+  # Indent and beautify Fortran sources and generate dependency information
+  brew "findent"
+  # Stack trace visualizer
+  brew "flamegraph"
+  # LLVM Fortran Frontend
+  brew "flang"
+  # Check your project for common sources of contributor friction
+  brew "flint-checker"
+  # Statically typed functional, imperative, and logic programming language
+  brew "flix"
+  # Lightweight scripting language for querying databases
+  brew "flux"
+  # Command-line tools for fly.io services
+  brew "flyctl"
+  # Formatter for Fennel code
+  brew "fnlfmt"
+  # Fortran language server
+  brew "fortls"
+  # Non-strict, functional programming language in the spirit of Haskell
+  brew "frege"
+  # Data-parallel functional programming language
+  brew "futhark"
+  # Cross-platform application and UI framework
+  brew "qt"
+  # Toolkit for developing constraint-based systems and applications
+  brew "gecode"
+  # Implementation of the ANS Forth language
+  brew "gforth"
+  # Installer for the general purpose language Haskell
+  brew "ghcup"
+  # Distributed revision control system
+  brew "git"
+  # Git query language
+  brew "gitql"
+  # Statically typed language for the Erlang VM
+  brew "gleam"
+  # Static, type inferred and embeddable language written in Rust
+  brew "gluon"
+  # GNU implementation of the programming language APL
+  brew "gnu-apl"
+  # Prolog compiler with constraint solving
+  brew "gnu-prolog"
+  # Implementation of the Smalltalk language
+  brew "gnu-smalltalk"
+  # Pragmatic language for the JVM
+  brew "gosu"
+  # Graph visualization software from AT&T and Bell Labs
+  brew "graphviz"
+  # Java-based scripting language
+  brew "groovy"
+  # GNU Ubiquitous Intelligent Language for Extensions
+  brew "guile"
+  # Guile bindings for the GnuTLS library
+  brew "guile-gnutls"
+  # Tool for glamorous shell scripts
+  brew "gum"
+  # High-level, dynamically typed programming language
+  brew "neko"
+  # Multi-platform programming language
+  brew "haxe"
+  # Language server for Helm
+  brew "helm-ls"
+  # Easy plain text accounting with command-line, terminal and web UIs
+  brew "hledger"
+  # Haskell source code suggestions
+  brew "hlint"
+  # Modern format for Haskell packages
+  brew "hpack"
+  # Dialect of Lisp that's embedded in Python
+  brew "hy"
+  # Command-line benchmarking tool
+  brew "hyperfine"
+  # Verilog simulation and synthesis tool
+  brew "icarus-verilog"
+  # General-purpose programming language
+  brew "icon"
+  # Pure functional programming language with dependent types
+  brew "idris2"
+  # Tools and libraries to manipulate images in many formats
+  brew "imagemagick"
+  # Tool to analyze #includes in C and C++ source files
+  brew "include-what-you-use"
+  # Safe and concurrent object-oriented programming language
+  brew "inko"
+  # Dynamic language and bytecode vm
+  brew "janet"
+  # JQ clone focussed on correctness, speed, and simplicity
+  brew "jaq"
+  # Embeddable scripting language for real-time applications
+  brew "jinx"
+  # Service-oriented programming language
+  brew "jolie"
+  # Lightweight and flexible command-line JSON processor
+  brew "jq"
+  # Handy way to save and run project-specific commands
+  brew "just"
+  # Programming language for Java (implementation of Scheme)
+  brew "kawa"
+  # Compiler for the Koka language
+  brew "koka"
+  # Open-source implementation of the K programming language
+  brew "kona"
+  # Portable D programming language compiler
+  brew "ldc"
+  # Compiled programming language inspired by COBOL
+  brew "ldpl"
+  # Concurrent Lisp for the Erlang VM
+  brew "lfe"
+  # JIT library for the GNU compiler collection
+  brew "libgccjit"
+  # Declarative object-oriented logic programming language
+  brew "logtalk"
+  # Package manager for the Lua programming language
+  brew "luarocks"
+  # Fast, safe, gradually typed embeddable scripting language derived from Lua
+  brew "luau"
+  # Utility for directing compilation
+  brew "make"
+  # Generate a markdown TOC (table of contents) with Remarkable
+  brew "markdown-toc"
+  # Mathematical Components for the Coq proof assistant
+  brew "math-comp"
+  # Safe, concurrent, practical language
+  brew "rust"
+  # Build and publish Rust crates as Python packages
+  brew "maturin"
+  # Logic/functional programming language
+  brew "mercury"
+  # Small build system for use with gyp or CMake
+  brew "ninja"
+  # Fast and user friendly build system
+  brew "meson"
+  # Programs that partition graphs and order matrices
+  brew "metis"
+  # Medium-level constraint modeling language
+  brew "minizinc", link: false
+  # Modern Linker
+  brew "mold"
+  # Run multiple commands in parallel
+  brew "mprocs"
+  # Turn marked-up plain text into well-formatted documents
+  brew "multimarkdown"
+  # Another cmake lsp
+  brew "neocmakelsp"
+  # Programming language for deeply networked systems
+  brew "nesc"
+  # Statically typed, embedded functional programming language
+  brew "never"
+  # Lisp-like, general-purpose scripting language
+  brew "newlisp"
+  # Statically typed compiled systems programming language
+  brew "nim"
+  # Object-oriented, Lisp-like programming language
+  brew "nu"
+  # Modern shell for the GitHub era
+  brew "nushell"
+  # Expressive, simple, dynamic programming language
+  brew "oak"
+  # OCI-based ASDF system distribution and management tool for Common Lisp
+  brew "ocicl"
+  # High-level interpreted language for numerical computing
+  brew "octave"
+  # Programming language with focus on simplicity, performance and modern systems
+  brew "odin"
+  # Bash-compatible Unix shell with more consistent syntax and semantics
+  brew "oils-for-unix"
+  # Purely functional dialect of Lisp
+  brew "ol"
+  # OCaml package manager
+  brew "opam"
+  # Tool for writing definitions of programming languages and calculi
+  brew "ott"
+  # Parser generator for C
+  brew "packcc"
+  # PostgreSQL syntax beautifier
+  brew "pgformatter"
+  # Simple, and yet powerful, logic-based multi-paradigm programming language
+  brew "picat"
+  # Dynamic programming language
+  brew "pike"
+  # Execute binaries from Python packages in isolated environments
+  brew "pipx"
+  # Python package management tool
+  brew "poetry"
+  # Adds support for geographic objects to PostgreSQL
+  brew "postgis"
+  # Object-relational database system
+  brew "postgresql@17", restart_service: :changed
+  # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
+  brew "prettier"
+  # Automated theorem prover for first-order and equational logic
+  brew "prover9"
+  # Strongly typed programming language that compiles to JavaScript
+  brew "purescript"
+  # Language Server Protocol server for PureScript
+  brew "purescript-language-server"
+  # It's not just a linter that annoys you!
+  brew "pylint"
+  # Python Language Server for the Language Server Protocol
+  brew "python-lsp-server"
+  # Search tool like grep and The Silver Searcher
+  brew "ripgrep"
+  # Wrapper around ripgrep that adds multiple rich file types
+  brew "ripgrep-all"
+  # Lisp installer and launcher for major environments
+  brew "roswell"
+  # Source code cross-referencer like ctags with a clang frontend
+  brew "rtags"
+  # Ruby autoformatter
+  brew "rubyfmt"
+  # Extremely fast Python linter, written in Rust
+  brew "ruff"
+  # Language Server Protocol implementation for Ruff
+  brew "ruff-lsp"
+  # Rye is a homoiconic programming language focused on fluid expressions
+  brew "ryelang"
+  # Scala-based build system
+  brew "sbuild"
+  # Command-line tool to manage Scala environments
+  brew "scalaenv"
+  # High-performance linear algebra for distributed memory machines
+  brew "scalapack"
+  # Run scalastyle from the command-line
+  brew "scalastyle"
+  # Intuitive find & replace CLI
+  brew "sd"
+  # Static analysis and lint tool, for (ba)sh scripts
+  brew "shellcheck"
+  # BDD unit testing framework for dash, bash, ksh, zsh and all POSIX shells
+  brew "shellspec"
+  # Autoformat shell script source code
+  brew "shfmt"
+  # Custom parser and code formatter for Standard ML
+  brew "smlfmt"
+  # Secure Programming Lint
+  brew "splint"
+  # SQL linter to do sanity checks on your queries and bring errors back from the DB
+  brew "sql-lint"
+  # SQL linter and auto-formatter for Humans
+  brew "sqlfluff"
+  # SQL formatter with width-aware output
+  brew "sqlfmt"
+  # High level, imperative, object-oriented programming language
+  brew "squirrel"
+  # Cross-shell prompt for astronauts
+  brew "starship"
+  # ISO/Edinburgh-style Prolog interpreter
+  brew "swi-prolog"
+  # Very fast implementation of tldr in Rust
+  brew "tealdeer"
+  # Extremely fast LaTeX formatter written in Rust
+  brew "tex-fmt"
+  # Program that allows you to count code, quickly
+  brew "tokei"
+  # One CLI to format the code tree
+  brew "treefmt"
+  # Lisp-like programming language for convenient data munging
+  brew "txr"
+  # Formatter for typst
+  brew "typstfmt"
+  # Friendly programming language from the future
+  brew "unisonlang"
+  # Maintained ctags implementation
+  brew "universal-ctags"
+  # Extremely fast Python package installer and resolver, written in Rust
+  brew "uv"
+  # Verilog simulator
+  brew "verilator"
+  # Tool for creating isolated virtual python environments
+  brew "virtualenv"
+  # V programming language
+  brew "vlang"
+  # Layer providing Vulkan features when native support is unavailable
+  brew "vulkan-extensionlayer"
+  # Vulkan ICD Loader
+  brew "vulkan-loader"
+  # Vulkan utilities and tools
+  brew "vulkan-tools"
+  # Vulkan layers that enable developers to verify correct use of the Vulkan API
+  brew "vulkan-validationlayers"
+  # Meta loader for Vulkan API
+  brew "vulkan-volk"
+  # Small, fast, class-based concurrent scripting language
+  brew "wren"
+  # Check your $HOME for unwanted files and directories
+  brew "xdg-ninja"
+  # Statistical data science environment based on Lisp
+  brew "xlispstat"
+  # Extensible command-line tool to format YAML files
+  brew "yamlfmt"
+  # Linter for YAML files
+  brew "yamllint"
+  # High-performance, asynchronous messaging library
+  brew "zeromq"
+  # Programming language designed for robustness, optimality, and clarity
+  brew "zig"
+  # Package manager for the Zig programming language
+  brew "zigmod"
+  # Shell extension to navigate your filesystem faster
+  brew "zoxide"
+  # Distributed object programming environment
+  brew "aconchillo/guile/guile-goblins"
+  # View, create, manipulate, print and manage files in Portable Document Format
+  cask "adobe-acrobat-pro"
+  # E-book reader
+  cask "adobe-digital-editions"
+  # Application launcher and productivity software
+  cask "alfred"
+  # Programming language for software modelling
+  cask "alloy"
+  # Memory training application
+  cask "anki"
+  # Video calls designed for energy, ideas and action
+  cask "around"
+  # Asciidoc editor and toolchain to build books, documents and slides
+  cask "asciidocfx"
+  # Web browser focusing on privacy
+  cask "brave-browser"
+  # E-books management software
+  cask "calibre"
+  # Family of tools to build, test and package software
+  cask "cmake"
+  # Formal proof management system
+  cask "coq-platform"
+  # Multi-platform client-side cloud file encryption tool
+  cask "cryptomator"
+  # Voice and text chat software
+  cask "discord"
+  # App to build and share containerised applications and microservices
+  cask "docker"
+  # APL-based development environment
+  cask "dyalog"
+  # Matrix collaboration client
+  cask "element"
+  # Google Chromium, sans integration with Google
+  cask "eloston-chromium"
+  # Text editor
+  cask "emacs"
+  # Programming language
+  cask "factor"
+  # Web browser
+  cask "firefox"
+  # Privacy-focused Firefox-based browser
+  cask "floorp"
+  cask "font-iosevka-nerd-font"
+  # Terminal emulator that uses platform-native UI and GPU acceleration
+  cask "ghostty"
+  # Game client
+  cask "gog-galaxy"
+  # Web browser
+  cask "google-chrome"
+  # Game launcher
+  cask "heroic"
+  # Dedicated scratchpad for developers
+  cask "heynote"
+  # Generic proof assistant
+  cask "isabelle"
+  # Terminal emulator as alternative to Apple's Terminal app
+  cask "iterm2"
+  # Programming language for mathematical, statistical and logical analysis of data
+  cask "j"
+  # Statistical analysis application
+  cask "jasp"
+  # Open-source video calls and chat
+  cask "jitsi"
+  # Password manager app
+  cask "keepassxc"
+  # End-to-end encryption software
+  cask "keybase"
+  # Official client for LBRY, a decentralised file-sharing and payment network
+  cask "lbry"
+  # Free cross-platform office suite, fresh version
+  cask "libreoffice"
+  # Web browser
+  cask "librewolf"
+  # Privacy-first, open-source platform for knowledge sharing and management
+  cask "logseq"
+  # Full TeX Live distribution with GUI applications
+  cask "mactex"
+  # Scan and remove malware, spyware, and viruses
+  cask "malwarebytes"
+  # Open-source, self-hosted Slack-alternative
+  cask "mattermost"
+  # Open-source constraint modelling language and IDE
+  cask "minizincide"
+  # Web browser focused on privacy and on minimizing tracking and fingerprinting
+  cask "mullvad-browser"
+  # VPN client
+  cask "mullvadvpn"
+  # Developer IDE or Management Environment for Neo4j instances
+  cask "neo4j"
+  # Open-source software for live streaming and screen recording
+  cask "obs"
+  # Securely and anonymously share files, host websites, and chat with friends
+  cask "onionshare"
+  # Administration and development platform for PostgreSQL
+  cask "pgadmin4"
+  # Ontology editor
+  cask "protege"
+  # IDE for application development
+  cask "qt-creator"
+  # Keyboard-driven, vim-like browser based on PyQt5
+  cask "qutebrowser"
+  # Environment for statistical computing and graphics
+  cask "r"
+  # Modern programming language in the Lisp/Scheme family
+  cask "racket"
+  # Data science software focusing on R and Python
+  cask "rstudio"
+  # Mathematics software system
+  cask "sage"
+  # Plugin for AWS CLI to start and end sessions that connect to managed instances
+  cask "session-manager-plugin"
+  # App that enables mouse-free UI interaction
+  cask "shortcat"
+  # PDF reader and note-taking application
+  cask "skim"
+  # Team communication and collaboration software
+  cask "slack"
+  # CLI to create, run, and deploy Slack apps
+  cask "slack-cli"
+  # Compiler for the Standard ML '97 programming language
+  cask "smlnj"
+  # Code-based music creation and performance tool
+  cask "sonic-pi"
+  # Video game digital distribution service
+  cask "steam"
+  # JDK from the Eclipse Foundation (Adoptium)
+  cask "temurin"
+  # Scientific editing platform
+  cask "texmacs"
+  # IDE framework
+  cask "theiaide"
+  # Web browser focusing on security
+  cask "tor-browser"
+  # Multimedia player
+  cask "vlc"
+  # Video communication and virtual meeting platform
+  cask "zoom"
+  # Desktop client for the Zulip team chat platform
+  cask "zulip"
+#+end_src
 *** C++
 #+BEGIN_SRC emacs-lisp :tangle ~/.clang-format :mkdirp yes
 ---
