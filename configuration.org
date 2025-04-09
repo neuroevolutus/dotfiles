@@ -295,6 +295,7 @@
   (add-to-list 'load-path "${HOME}/.opam/repl/share/emacs/site-lisp")
   (require 'ocp-indent)
 #+end_src
+***** Rust
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (straight-use-package 'cargo) ; Rust configuration
   (straight-use-package 'rustic)
