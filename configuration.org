@@ -64,6 +64,8 @@
     :straight t)
   (use-package projectile
     :straight t)
+  (use-package cl-lib
+    :straight t)
 #+END_SRC
 *** Counsel set-up
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
