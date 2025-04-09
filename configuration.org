@@ -517,6 +517,9 @@
   export GUILE_LOAD_COMPILED_PATH="/opt/homebrew/lib/guile/3.0/site-ccache"
   export GUILE_SYSTEM_EXTENSIONS_PATH="/opt/homebrew/lib/guile/3.0/extensions"
 
+  # OCaml configuration
+  export PATH="${HOME}/.opam/default/bin:${HOME}/.opam/default/sbin:${PATH}"
+
   # Ensure GHCup is on $PATH
   export PATH=$HOME/.ghcup/bin:$PATH
 
