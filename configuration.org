@@ -511,6 +511,12 @@
   # Ensure Coursier-installed binaries are on $PATH
   export PATH=$HOME/Library/Application\ Support/Coursier/bin:$PATH
 
+  # Ensure NPM is on $PATH
+  export PATH="${PATH}:${HOME}/.npm/bin"
+
+  # Ensure Deno is on $PATH
+  export PATH="${HOME}/.deno/bin:${PATH}"
+
   # Preferred editor for local and remote sessions
   if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='vim'
