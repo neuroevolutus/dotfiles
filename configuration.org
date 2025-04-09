@@ -431,7 +431,7 @@
       :init
       (ivy-rich-mode 1))
     (use-package swiper
-      :straight t))
+      :straight t)
     (use-package ivy-posframe
       :straight t
       :init
