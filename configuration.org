@@ -278,6 +278,18 @@
     :init
     (setq inferior-lisp-program "sbcl"))
 #+END_SRC
+***** OCaml
+#+begin_src emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (use-package caml
+    :straight t
+    :config (add-to-list 'auto-mode-alist '("\\.ml[iylp]?$" . caml-mode))
+    )
+  ;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
+  (require 'opam-user-setup "${HOME}/.emacs.d/opam-user-setup.el")
+  ;; ## end of OPAM user-setup addition for emacs / base ## keep this line
+  (add-to-list 'load-path "${HOME}/.opam/repl/share/emacs/site-lisp")
+  (require 'ocp-indent)
+#+end_src
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (straight-use-package 'cargo) ; Rust configuration
   (straight-use-package 'rustic)
