@@ -277,6 +277,11 @@
     :straight t
     :init
     (setq inferior-lisp-program "sbcl"))
+  (use-package paredit
+    :straight t
+    :init
+    (add-hook 'lisp-mode-hook #'enable-paredit-mode)
+    (add-hook'scheme-mode-hook #'enable-paredit-mode))
 #+END_SRC
 ***** OCaml
 #+begin_src emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
