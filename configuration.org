@@ -471,8 +471,7 @@
 
   (use-package proof-general
     :straight t)
-					  ; Lean configuration
-  (straight-use-package 'lean-mode)
+  (straight-use-package 'lean-mode) ; Lean configuration
 
   (use-package beacon
     :straight t
