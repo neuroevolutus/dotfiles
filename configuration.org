@@ -443,6 +443,11 @@
   (straight-use-package 'scala-mode)
   (straight-use-package 'lsp-metals)
 #+END_SRC
+***** Scheme
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
+  (use-package geiser
+    :straight t)
+#+END_SRC
 **** Protobuf
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
   (straight-use-package 'protobuf-mode)
