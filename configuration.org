@@ -897,6 +897,8 @@
   brew "diff-so-fancy"
   # Diff that understands syntax
   brew "difftastic"
+  # Load/unload environment variables based on $PWD
+  brew "direnv"
   # Distributed compiler client and server
   brew "distcc"
   # Git for Data
