@@ -1264,7 +1264,7 @@
   # E-books management software
   cask "calibre"
   # Family of tools to build, test and package software
-  cask "cmake"
+  cask "cmake-app"
   # Formal proof management system
   cask "coq-platform"
   # Multi-platform client-side cloud file encryption tool
