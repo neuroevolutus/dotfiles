@@ -1151,6 +1151,8 @@
   brew "roswell"
   # Source code cross-referencer like ctags with a clang frontend
   brew "rtags"
+  # Opinionated language server for Ruby
+  brew "ruby-lsp"
   # Ruby autoformatter
   brew "rubyfmt"
   # Extremely fast Python linter, written in Rust
