@@ -1169,6 +1169,8 @@
   brew "scalapack"
   # Run scalastyle from the command-line
   brew "scalastyle"
+  # Modern ISO Prolog implementation written mostly in Rust
+  brew "scryer-prolog"
   # Intuitive find & replace CLI
   brew "sd"
   # Static analysis and lint tool, for (ba)sh scripts
