@@ -1191,6 +1191,8 @@
   brew "sqlfluff"
   # SQL formatter with width-aware output
   brew "sqlfmt"
+  # Analyze how space is allocated inside an SQLite file
+  brew "sqlite-analyzer"
   # High level, imperative, object-oriented programming language
   brew "squirrel-lang"
   # Cross-shell prompt for astronauts
