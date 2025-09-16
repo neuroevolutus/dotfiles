@@ -991,6 +991,10 @@
   brew "gnu-smalltalk"
   # Pragmatic language for the JVM
   brew "gosu"
+  # Tag generator for Go, compatible with ctags
+  brew "gotags"
+  # Apply a diff file to an original
+  brew "gpatch"
   # Graph visualization software from AT&T and Bell Labs
   brew "graphviz"
   # Java-based scripting language
