@@ -1400,6 +1400,8 @@
   cask "tor-browser"
   # Multimedia player
   cask "vlc"
+  # Binary releases of VS Code without MS branding/telemetry/licensing
+  cask "vscodium"
   # Video communication and virtual meeting platform
   cask "zoom"
   # Desktop client for the Zulip team chat platform
