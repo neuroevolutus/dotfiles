@@ -843,8 +843,6 @@
   brew "cmake-language-server"
   # Generate a Clang compilation database for Make-based build systems
   brew "compiledb"
-  # General purpose programming language in the ML family
-  brew "ocaml"
   # Object-oriented, actor-model, capabilities-secure programming language
   brew "ponyc"
   # Dependency manager for the Pony language
@@ -1011,6 +1009,8 @@
   brew "haxe"
   # Language server for Helm
   brew "helm-ls"
+  # General purpose programming language in the ML family
+  brew "ocaml"
   # Easy plain text accounting with command-line, terminal and web UIs
   brew "hledger"
   # Haskell source code suggestions
