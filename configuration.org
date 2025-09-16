@@ -1183,6 +1183,8 @@
   brew "smlfmt"
   # Secure Programming Lint
   brew "splint"
+  # Whitespace formatter for different query languages
+  brew "sql-formatter"
   # SQL linter to do sanity checks on your queries and bring errors back from the DB
   brew "sql-lint"
   # SQL linter and auto-formatter for Humans
