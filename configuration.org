@@ -971,6 +971,8 @@
   brew "gecode"
   # Implementation of the ANS Forth language
   brew "gforth"
+  # GitHub command-line tool
+  brew "gh"
   # Installer for the general purpose language Haskell
   brew "ghcup"
   # Distributed revision control system
