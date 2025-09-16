@@ -872,7 +872,7 @@
   # Verification-aware programming language
   brew "dafny"
   # POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
-  brew "dash"
+  brew "dash-shell"
   # Formatter for D source code
   brew "dfmt"
   # Interpreter for the Dhall language
