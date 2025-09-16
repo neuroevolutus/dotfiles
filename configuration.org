@@ -733,6 +733,10 @@
   brew "akamai"
   # Music programming language for musicians
   brew "alda"
+  # ANother Tool for Language Recognition
+  brew "antlr"
+  # ANother Tool for Language Recognition C++ Runtime Library
+  brew "antlr4-cpp-runtime"
   # High-performance theorem prover
   brew "z3"
   # GNU compiler collection
