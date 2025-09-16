@@ -1255,6 +1255,12 @@
   brew "zoxide"
   # Distributed object programming environment
   brew "aconchillo/guile/guile-goblins"
+  # LSP Server for Guile
+  brew "aconchillo/guile/guile-lsp-server"
+  # Toolchain for Wanix virtual environments
+  brew "progrium/taps/wanix"
+  # TinyGo is a Go compiler for small places. Microcontrollers, WebAssembly, and command-line tools. Based on LLVM.
+  brew "tinygo-org/tools/tinygo"
   # View, create, manipulate, print and manage files in Portable Document Format
   cask "adobe-acrobat-pro"
   # E-book reader
