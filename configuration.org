@@ -1251,6 +1251,8 @@
   brew "vulkan-validationlayers"
   # Meta loader for Vulkan API
   brew "vulkan-volk"
+  # Toolkit for building whole-program LLVM bitcode files
+  brew "wllvm"
   # Small, fast, class-based concurrent scripting language
   brew "wren"
   # Check your $HOME for unwanted files and directories
