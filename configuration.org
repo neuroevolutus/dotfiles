@@ -725,6 +725,8 @@
   brew "sbcl"
   # Logic and programming language in which you can model computer systems
   brew "acl2"
+  # GNU multiple precision arithmetic library
+  brew "gmp"
   # Dependently typed functional programming language
   brew "agda"
   # CLI toolkit for working with Akamai's APIs
@@ -733,8 +735,6 @@
   brew "alda"
   # High-performance theorem prover
   brew "z3"
-  # GNU multiple precision arithmetic library
-  brew "gmp"
   # GNU compiler collection
   brew "gcc"
   # Simple, modern and portable programming language for efficient scripting
