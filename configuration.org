@@ -987,6 +987,12 @@
   brew "gnu-prolog"
   # Implementation of the Smalltalk language
   brew "gnu-smalltalk"
+  # Open source programming language to build simple/reliable/efficient software
+  brew "go"
+  # Fast linters runner for Go
+  brew "golangci-lint"
+  # Language server for the Go language
+  brew "gopls"
   # Pragmatic language for the JVM
   brew "gosu"
   # Tag generator for Go, compatible with ctags
