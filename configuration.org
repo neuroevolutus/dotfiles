@@ -1078,7 +1078,7 @@
   # Programs that partition graphs and order matrices
   brew "metis"
   # Medium-level constraint modeling language
-  brew "minizinc", link: false
+  brew "minizinc"
   # Modern Linker
   brew "mold"
   # Run multiple commands in parallel
