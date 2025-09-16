@@ -871,6 +871,8 @@
   brew "dafny"
   # POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
   brew "dash-shell"
+  # Debugger for the Go programming language
+  brew "delve"
   # Formatter for D source code
   brew "dfmt"
   # Interpreter for the Dhall language
