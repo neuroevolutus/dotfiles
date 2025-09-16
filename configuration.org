@@ -779,6 +779,8 @@
   brew "bear"
   # Size profiler for binaries
   brew "bloaty"
+  # Drop-in replacement for Apple system linker ld
+  brew "bold"
   # Collection of portable C++ source libraries
   brew "boost"
   # C++ library for C++/MPI interoperability
