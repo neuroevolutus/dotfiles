@@ -1093,6 +1093,8 @@
   brew "meson"
   # Programs that partition graphs and order matrices
   brew "metis"
+  # Statically typed compiled systems programming language
+  brew "nim"
   # Medium-level constraint modeling language
   brew "minizinc"
   # Modern Linker
@@ -1109,8 +1111,6 @@
   brew "never"
   # Lisp-like, general-purpose scripting language
   brew "newlisp"
-  # Statically typed compiled systems programming language
-  brew "nim"
   # Object-oriented, Lisp-like programming language
   brew "nu"
   # Modern shell for the GitHub era
