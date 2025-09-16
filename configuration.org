@@ -1095,6 +1095,8 @@
   brew "metis"
   # Statically typed compiled systems programming language
   brew "nim"
+  # Small but practical concatenative programming language and shell
+  brew "min-lang"
   # Medium-level constraint modeling language
   brew "minizinc"
   # Modern Linker
