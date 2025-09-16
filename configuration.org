@@ -1186,7 +1186,7 @@
   # SQL formatter with width-aware output
   brew "sqlfmt"
   # High level, imperative, object-oriented programming language
-  brew "squirrel"
+  brew "squirrel-lang"
   # Cross-shell prompt for astronauts
   brew "starship"
   # ISO/Edinburgh-style Prolog interpreter
