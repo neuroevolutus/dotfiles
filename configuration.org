@@ -1330,6 +1330,8 @@
   cask "minizincide"
   # Web browser focused on privacy and on minimizing tracking and fingerprinting
   cask "mullvad-browser"
+  # Light-weight implementation of Standard ML
+  cask "moscow-ml"
   # VPN client
   cask "mullvadvpn"
   # Developer IDE or Management Environment for Neo4j instances
