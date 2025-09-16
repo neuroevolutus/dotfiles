@@ -961,6 +961,8 @@
   brew "fnlfmt"
   # Fortran language server
   brew "fortls"
+  # Formatter for Haskell source code
+  brew "fourmolu"
   # Non-strict, functional programming language in the spirit of Haskell
   brew "frege"
   # Data-parallel functional programming language
