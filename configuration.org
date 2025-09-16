@@ -1314,6 +1314,8 @@
   cask "keybase"
   # Official client for LBRY, a decentralised file-sharing and payment network
   cask "lbry"
+  # GPU-based terminal emulator
+  cask "kitty"
   # Free cross-platform office suite, fresh version
   cask "libreoffice"
   # Web browser
