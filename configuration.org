@@ -1053,6 +1053,8 @@
   brew "ldpl"
   # Concurrent Lisp for the Erlang VM
   brew "lfe"
+  # ANTLRv3 parsing library for C
+  brew "libantlr3c"
   # JIT library for the GNU compiler collection
   brew "libgccjit"
   # Declarative object-oriented logic programming language
